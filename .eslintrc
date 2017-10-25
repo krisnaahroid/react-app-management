@@ -22,7 +22,6 @@
   "plugins": [
     "mocha"
   ],
-  // Severity should be one of the following: 0 = off, 1 = warn, 2 = error
   "rules": {
     semi: [2, "never"],
     prefer-const: 2,
@@ -37,21 +36,5 @@
     "mocha/no-exclusive-tests": 2,
     "import/extensions": [2, "never"],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
-    "no-mixed-operators": [2, { "allowSamePrecedence": true }],
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
-
-    // jsx-a11y/media-has-caption is disabled because WebVTT files are not available
-    "jsx-a11y/media-has-caption": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-a11y/no-noninteractive-element-interactions": 0,
-
-    // IMPORTANT NOTE: Temporarily turn off the rules below,
-    // the rules below will be addressed in a separate PR.
-    "import/no-extraneous-dependencies": ["off", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
-    "react/require-default-props": "off",
-    "jsx-a11y/href-no-hash": "off", // has been removed https://github.com/evcohen/eslint-plugin-jsx-a11y/commit/a14617528cda23c6c88902ace1d083e4e13ac271
-    "react/forbid-prop-types": "off",
-    "react/no-array-index-key": "off",
-    "class-methods-use-this": "off",
   }
 }
