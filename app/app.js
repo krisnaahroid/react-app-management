@@ -1,11 +1,18 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
 
-class HelloMessage extends React.Component {
+const propTypes = {
+  name: PropTypes.string.isRequired,
+}
+
+class HelloMessage extends React.PureComponent {
   render() {
     return <div>Hello {this.props.name}</div>
   }
 }
 
-var mountNode = document.getElementById("mount")
+HelloMessage.propTypes = propTypes
+
+const mountNode = document.getElementById('mount')
 ReactDOM.render(<HelloMessage name="World!" />, mountNode)
