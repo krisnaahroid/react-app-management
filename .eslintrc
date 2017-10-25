@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "mocha": true,
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "expect": true,
+    "sinon": true,
+    "_sinon": true,
+    "chai": true,
+    "React": true,
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    semi: [2, "never"],
+    prefer-const: 2,
+    "import/no-unresolved": 0,
+    key-spacing: [2, { "mode": "minimum" }],
+    comma-dangle: [2, "always-multiline"],
+    no-multi-spaces: 0,
+    no-underscore-dangle: 0,
+    no-unused-expressions: 0,
+    max-len: 0,
+    no-script-url: 0,
+    "mocha/no-exclusive-tests": 2,
+    "import/extensions": [2, "never"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+  }
+}
