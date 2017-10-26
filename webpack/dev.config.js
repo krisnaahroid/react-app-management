@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 config.entry.app = [
   'babel-polyfill',
   'eventsource-polyfill',
+  'webpack/webpack-public-path.js',
   'webpack-hot-middleware/client',
   'app.js',
 ]
