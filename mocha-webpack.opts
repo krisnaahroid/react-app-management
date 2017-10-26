@@ -1,0 +1,6 @@
+--colors
+--reporter dot
+--require source-map-support/register
+--require ./test/helpers/browser.js
+--webpack-config webpack/test.config.js
+test/**/*.spec.js
