@@ -24,3 +24,5 @@ coverage/
 .bundle/
 public/
 .eslintcache
+test-results.xml
+.yarnclean
