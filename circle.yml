@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  bundle_dependencies:
+    working_directory: ~/kokoro-admin-manager
+    docker:
+      - image: circleci/node:6.11.1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - kokoro-admin-manager-bundle-{{ checksum "package.json" }}
+      - run: yarn install
+      - save_cache:
+          key: kokoro-admin-manager-bundle-{{ checksum "package.json" }}
+          paths:
+            - ~/kokoro-admin-manager/node_modules
+      - run: yarn build:prod
+
+  test:
+    working_directory: ~/kokoro-admin-manager
+    docker:
+      - image: circleci/node:6.11.1
+        environment:
+          NODE_ENV: test
+          MOCHA_FILE: /tmp/test-results/test-results.xml
+    parallelism: 1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - kokoro-admin-manager-bundle-{{ checksum "package.json" }}
+      - run: yarn run lint -- --format junit --output-file /tmp/test-results/test-results.xml && yarn test -- --reporter mocha-junit-reporter
+      - run: mkdir -p /tmp/test-results
+      - store_test_results:
+          path: /tmp/test-results
+
+  deploy_staging: 
+    working_directory: ~/kokoro-admin-manager
+    machine:
+      enabled: true
+    steps:
+      - checkout
+      - run: bash .circleci/setup-heroku.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "12:63:2d:c2:65:44:5d:aa:5f:d9:b7:57:bb:8b:b1:dd"
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push heroku master
+              heroku restart
+            fi
+
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - bundle_dependencies
+      - test:
+          requires:
+            - bundle_dependencies
+      - deploy_staging:
+          requires:
+            - test

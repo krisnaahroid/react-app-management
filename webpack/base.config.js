@@ -94,10 +94,7 @@ var config = {
     }),
     new webpack.ProvidePlugin({ React: 'react' }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new CopyWebpackPlugin([
-      { from: 'app/assets/img/favicons/favicon.ico' }
-    ])
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   externals: {
     'cheerio': 'window',
@@ -106,6 +103,14 @@ var config = {
     'react/lib/ReactContext': true
   },
   devtool: process.env.DEVTOOL || 'source-map'
+}
+
+if (process.env.NODE_ENV !== 'test') {
+  config.plugins.push(
+    new CopyWebpackPlugin([
+      { from: `app/assets/img/favicons/favicon.ico` }
+    ])
+  )
 }
 
 module.exports = config
