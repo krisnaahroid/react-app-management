@@ -26,3 +26,4 @@ public/
 .eslintcache
 test-results.xml
 .yarnclean
+.npm-debug.log
