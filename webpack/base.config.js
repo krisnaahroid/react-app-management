@@ -5,7 +5,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var appConfig = {
   site_env: process.env.SITE_ENV || 'development', // e.g. staging, edge
-  base_url: process.env.BASE_URL || 'http://localhost:3001'
 }
 
 var postcssLoaderOptions = {
@@ -74,6 +73,10 @@ var config = {
         test: /\.(eot|ttf|woff2?)$/,
         use: ['file-loader']
       },
+      {
+        test: /\.svg$/,
+        loader: 'raw-loader'
+      }
     ]
   },
   resolve: {
@@ -108,7 +111,8 @@ var config = {
 if (process.env.NODE_ENV !== 'test') {
   config.plugins.push(
     new CopyWebpackPlugin([
-      { from: `app/assets/img/favicons/favicon.ico` }
+      { from: `app/assets/img/favicons/favicon.ico` },
+      { from: `app/assets/img`, to: `assets` } 
     ])
   )
 }
