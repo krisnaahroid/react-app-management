@@ -5,10 +5,11 @@ const API_URL = process.env.APP_CONFIG.api_url
 
 const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
   try {
-    dispatch({
-      type: REQUEST,
-      meta: { status: PENDING },
-    })
+    // TODO: Create reducers for pre loading
+    // dispatch({
+    //   type: REQUEST,
+    //   meta: { status: PENDING },
+    // })
 
     const reqArgs = [`${API_URL}/${opts.endpoint || ''}`]
 
@@ -20,11 +21,12 @@ const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
 
     const response = await axios[requestType](...reqArgs)
 
-    dispatch({
-      type: REQUEST,
-      meta: { status: SUCCESS },
-      payload: response.data,
-    })
+    // TODO: Create reducers for after loading
+    // dispatch({
+    //   type: REQUEST,
+    //   meta: { status: SUCCESS },
+    //   payload: response.data,
+    // })
 
     return Promise.resolve(response.data)
   } catch (err) {

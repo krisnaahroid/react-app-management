@@ -22,7 +22,7 @@ class Header extends React.PureComponent {
   render() {
     return (
       <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav">
           {this.renderLinks()}
         </ul>
       </nav>
