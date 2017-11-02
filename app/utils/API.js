@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { POST, PUT, GET, DELETE, PENDING, SUCCESS, REQUEST } from 'constants/ActionTypes'
+import { POST, PUT, GET, DELETE } from 'constants/ActionTypes'
 
 const API_URL = process.env.APP_CONFIG.api_url
 

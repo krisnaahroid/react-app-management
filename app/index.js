@@ -1,4 +1,5 @@
 import React from 'react'
+import 'styles'
 import configureStore from 'store/configureStore'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Router, Switch } from 'react-router-dom'
@@ -7,8 +8,6 @@ import { getCurrentUser } from 'actions/Auth'
 import ReactDOM from 'react-dom'
 import History from './history'
 import Routes from './routes'
-
-import 'styles'
 
 const store = configureStore()
 const token = localStorage.getItem('token')

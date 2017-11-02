@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 class Login extends React.PureComponent {
   constructor(props) {
     super(props)
-    
+
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
