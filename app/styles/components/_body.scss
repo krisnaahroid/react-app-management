@@ -1,0 +1,27 @@
+html {
+  font-family: 'Open Sans', serif;
+  font-size: $base-font-size;
+}
+
+html {
+  height: auto;
+  color: $text-black;
+  background-color: $background-color;
+}
+
+html,
+body {
+  width: 100%;
+  position: relative;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  min-width: 1200px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: inherit;
+  background-color: inherit;
+  font-family: inherit;
+}
