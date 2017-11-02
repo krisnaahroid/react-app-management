@@ -7,7 +7,7 @@ config.entry.app = [
   'eventsource-polyfill',
   'webpack/webpack-public-path.js',
   'webpack-hot-middleware/client',
-  'app.js',
+  'index.js',
 ]
 
 config.plugins.push(
