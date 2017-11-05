@@ -4,7 +4,7 @@ import { Table } from 'reactstrap'
 storiesOf('Table', module)
   .add('Table', () => (
     <div className="p-a-lg">
-      <Table className='list-order-table'>
+      <Table className="list-order-table">
         <thead>
           <tr>
             <th />
