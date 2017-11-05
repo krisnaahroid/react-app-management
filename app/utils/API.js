@@ -2,6 +2,7 @@ import axios from 'axios'
 import { POST, PUT, GET, DELETE } from 'constants/ActionTypes'
 
 const API_URL = process.env.APP_CONFIG.api_url
+const NAME_SPACE = 'admin'
 
 const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
   try {
@@ -11,7 +12,7 @@ const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
     //   meta: { status: PENDING },
     // })
 
-    const reqArgs = [`${API_URL}/${opts.endpoint || ''}`]
+    const reqArgs = [`${API_URL}/${NAME_SPACE}/${opts.endpoint || ''}`]
 
     if (requestType === POST || requestType === PUT) {
       reqArgs.push(opts.data || {})

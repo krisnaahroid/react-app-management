@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import { loginUser } from 'actions/Auth'
 import { connect } from 'react-redux'
 
-class Login extends React.PureComponent {
+class Login extends React.Component {
   constructor(props) {
     super(props)
 
