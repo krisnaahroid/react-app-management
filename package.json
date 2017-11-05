@@ -6,7 +6,7 @@
   "author": "Elga <elga.lesmana@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "yarn build:prod",
+    "heroku-postbuild": "yarn build:prod && yarn build-storybook",
     "clean": "rm -rf public",
     "test": "NODE_ENV=test mocha-webpack",
     "test:watch": "NODE_ENV=test mocha-webpack --watch",
