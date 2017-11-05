@@ -1,0 +1,57 @@
+.list-order-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: solid $head-background-color 1px;
+  border-radius: 6px;
+  border-left: 0;
+  border-top: 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+  color: $text-grey;
+  text-align: center;
+
+  td.therapist {
+    text-align: left;
+    color: $text-green;
+  }
+
+  > thead:first-child > tr:first-child > th {
+    background-color: $head-background-color;
+    border-top: solid $head-background-color 1px;
+    border-bottom: solid $border-bottom-color 1px;
+    color: $text-green;
+    font-weight: 600;
+    font-size: 1.143rem;
+    line-height: 1.19;
+    padding: 14px;
+  }
+
+  td,
+  th {
+    border-left: none;
+    border-top: 1px solid $border-top-color;
+    border-bottom: 1px solid $border-bottom-color;
+    background-color: $td-background-color;
+    padding: 32px;
+  }
+
+  > :last-child > tr > td {
+    border-bottom: none;
+  }
+
+  > :first-child > :first-child > :first-child {
+    border-top-left-radius: 6px;
+  }
+
+  > :first-child > :first-child > :last-child {
+    border-top-right-radius: 6px;
+  }
+
+  > :last-child > :last-child > :first-child {
+    border-bottom-left-radius: 6px;
+  }
+
+  > :last-child > :last-child > :last-child {
+    border-bottom-right-radius: 6px;
+  }
+}
