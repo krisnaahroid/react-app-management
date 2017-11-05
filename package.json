@@ -18,7 +18,7 @@
     "build:prod": "NODE_ENV=production webpack --config webpack/prod.config.js",
     "start": "yarn && npm run build:dll && npm run build && node server.js",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook -o public/storybook"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
