@@ -48,11 +48,22 @@ yarn run test:watch
 
 If you would like to run a test on a specific file, just execute test command as you like `yarn test test/path_to_spec.js`
 
+##### Storybook
+
+Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+
+```sh
+yarn storybook
+```
+
+And you can visit the storybook site at your local with the URL http://localhost:6006
+
 ##### Lint
 
 ```sh
 yarn run lint
 yarn run fixlint # use eslint --fix, they can automatically fix some of errors, but not all.
+yarn stylelint
 ```
 
 ##### Redux Devtools Extension
