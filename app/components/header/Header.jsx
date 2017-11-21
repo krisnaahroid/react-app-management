@@ -3,7 +3,7 @@ import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstr
 import { NavLink as RRNavLink } from 'react-router-dom'
 import Brand from './Brand'
 
-class Header extends React.PureComponent {
+class Header extends React.Component {
   constructor() {
     super()
 
