@@ -1,39 +1,55 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap'
+import { NavLink as RRNavLink } from 'react-router-dom'
+import Brand from './Brand'
 
-class Header extends React.PureComponent {
-  renderLinks() {
-    if (this.props.authenticated) {
-      return (
-        <li className="nav-item">
-          <Link className="nav-link" to="/logout">Sign Out</Link>
-        </li>
-      )
+class Header extends React.Component {
+  constructor() {
+    super()
+
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+      isOpen: false,
     }
-    return [
-      <li className="nav-item" key="login">
-        <Link className="nav-link" to="/login">Sign In</Link>
-      </li>,
-    ]
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    })
   }
 
   render() {
     return (
-      <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-        <ul className="navbar-nav">
-          {this.renderLinks()}
-        </ul>
-      </nav>
+      <div>
+        <Navbar color="faded" light expand="md">
+          <Brand />
+
+          <NavbarToggler onClick={this.toggle} />
+
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/orders" activeClassName="active" tag={RRNavLink}>Order</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/schedules" activeClassName="active" tag={RRNavLink}>Schedule</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/feedback" activeClassName="active" tag={RRNavLink}>Customer Feedback</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/statistics" activeClassName="active" tag={RRNavLink}>Statistic</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     )
   }
 }
 
-Header.propTypes = {
-  authenticated: PropTypes.bool,
-}
-
-const mapStateToProps = state => ({ authenticated: state.auth.authenticated })
-
-export default connect(mapStateToProps)(Header)
+export default Header

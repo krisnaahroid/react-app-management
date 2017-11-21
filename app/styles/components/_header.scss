@@ -1,0 +1,73 @@
+.logo-2x {
+  width: 215px;
+
+  @media (max-width: $screen-md) {
+    width: 150px;
+  }
+}
+
+.kokoro {
+  .navbar {
+    padding: 32px 0;
+    border-bottom: solid 1px $border-bottom-color;
+
+    @media (max-width: $screen-md) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+      padding: 1rem;
+      padding-bottom: 0.8rem;
+      background: $text-soft-grey;
+    }
+
+    .navbar-brand {
+      @media (max-width: $screen-md) {
+        padding: 0;
+      }
+    }
+
+    .nav-link {
+      color: $nav-link;
+      text-transform: uppercase;
+      font-size: 1.286rem;
+      font-weight: 600;
+      padding: 0 14px;
+      border-right: 1px solid $border-bottom-color;
+
+      &.active {
+        color: $text-green;
+      }
+
+      @media (max-width: $screen-md) {
+        text-transform: capitalize;
+        padding: 8px 0;
+        border-right: 0;
+        font-size: 1rem;
+      }
+    }
+
+    .nav-item:last-child > .nav-link {
+      border-right: 0;
+    }
+
+    .ml-auto {
+      @media (max-width: $screen-md) {
+        background: white;
+        border: 1px solid $head-background-color;
+        border-radius: 6px;
+        margin-top: 8px;
+
+        li.nav-item {
+          padding: 0.2rem 1rem;
+          border-bottom: 1px solid $head-background-color;
+        }
+
+        li.nav-item:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
