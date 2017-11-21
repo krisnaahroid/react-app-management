@@ -1,7 +1,7 @@
 .logo-2x {
   width: 215px;
 
-  @media(max-width: $screen-md) {
+  @media (max-width: $screen-md) {
     width: 150px;
   }
 }
@@ -9,9 +9,9 @@
 .kokoro {
   .navbar {
     padding: 32px 0;
-    border-bottom: solid 1px #EEE;
+    border-bottom: solid 1px $border-bottom-color;
 
-    @media(max-width: $screen-md) {
+    @media (max-width: $screen-md) {
       position: fixed;
       top: 0;
       right: 0;
@@ -19,32 +19,32 @@
       z-index: 1030;
       padding: 1rem;
       padding-bottom: 0.8rem;
-      background: #F9F9F9;
+      background: $text-soft-grey;
     }
 
     .navbar-brand {
-      @media(max-width: $screen-md) {
+      @media (max-width: $screen-md) {
         padding: 0;
       }
     }
 
     .nav-link {
-      color: #9b9b9b;
+      color: $nav-link;
       text-transform: uppercase;
-      font-size: 18px;
+      font-size: 1.286rem;
       font-weight: 600;
       padding: 0 14px;
-      border-right: 1px solid #EEE;
+      border-right: 1px solid $border-bottom-color;
 
       &.active {
-        color: #2a5629;
+        color: $text-green;
       }
 
-      @media(max-width: $screen-md) {
+      @media (max-width: $screen-md) {
         text-transform: capitalize;
         padding: 8px 0;
         border-right: 0;
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
 
@@ -53,15 +53,15 @@
     }
 
     .ml-auto {
-      @media(max-width: $screen-md) {
+      @media (max-width: $screen-md) {
         background: white;
-        border: 1px solid #F7F7F7;
+        border: 1px solid $head-background-color;
         border-radius: 6px;
         margin-top: 8px;
 
         li.nav-item {
           padding: 0.2rem 1rem;
-          border-bottom: 1px solid #F7F7F7;
+          border-bottom: 1px solid $head-background-color;
         }
 
         li.nav-item:last-child {

@@ -26,9 +26,9 @@ body {
 }
 
 body.kokoro {
-  @media(max-width: $screen-sm) {
+  @media (max-width: $screen-sm) {
     padding-top: 90px;
-  } 
+  }
 }
 
 *:focus {
