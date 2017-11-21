@@ -14,7 +14,9 @@ class Dashboard extends React.PureComponent {
             <br /><br />
             <button onClick={() => {
               this.props.logoutUser()
-            }}>Sign out</button>
+            }}
+            >Sign out
+            </button>
           </div>
         </div>
       </div>

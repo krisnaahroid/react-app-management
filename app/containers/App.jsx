@@ -10,9 +10,8 @@ class App extends React.PureComponent {
       return (
         <Header />
       )
-    } else {
-      return ''
     }
+    return ''
   }
 
   render() {
