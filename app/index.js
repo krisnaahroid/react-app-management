@@ -10,11 +10,11 @@ import History from './history'
 import Routes from './routes'
 
 const store = configureStore()
-const token = localStorage.getItem('token')
+const token = sessionStorage.getItem('token')
 
 if (token) {
-  store.dispatch(setCurrentUser())
   store.dispatch({ type: AUTH_USER })
+  store.dispatch(setCurrentUser())
 }
 
 ReactDOM.render(

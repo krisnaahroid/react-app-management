@@ -21,7 +21,7 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case AUTH_USER:
       return {
-        ...state, error: '', authenticated: true
+        ...state, error: '', authenticated: true,
       }
     case SET_CURRENT_USER:
       return {

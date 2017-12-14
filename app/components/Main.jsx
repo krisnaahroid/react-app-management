@@ -12,18 +12,16 @@ const showHeader = (authenticated) => {
   return null
 }
 
-const Main = ({ children, authenticated }) => {
-  return (
-    <Container>
-      { showHeader(authenticated) }
-      { children }
-    </Container>
-  )
-}
+const Main = ({ children, authenticated }) => (
+  <Container>
+    { showHeader(authenticated) }
+    { children }
+  </Container>
+)
 
 Main.propTypes = {
   children: PropTypes.node,
-  currentOrganization: PropTypes.bool,
+  authenticated: PropTypes.bool,
 }
 
 export default Main

@@ -11,29 +11,27 @@ import {
   Image,
 } from 'components/strap'
 
-const UserNavigation = ({ user, logout }) => {
-  return (
-    <div className="user-navigation">
-      <Navbar color="faded" light expand="md">
-        <Collapse navbar>
-          <div className="nav-user-info">{user.name}</div>
-          <Nav className="ml-auto" navbar>
-            <UncontrolledDropdown nav>
-              <DropdownToggle nav caret>
-                <Image className="img-user-navbar" src={user.avatar.small_url} />
-              </DropdownToggle>
-              <DropdownMenu >
-                <DropdownItem onClick={logout}>
+const UserNavigation = ({ logout, ...props }) => (
+  <div className="user-navigation">
+    <Navbar color="faded" light expand="md">
+      <Collapse navbar>
+        <div className="nav-user-info">{props.user.name}</div>
+        <Nav className="ml-auto" navbar>
+          <UncontrolledDropdown>
+            <DropdownToggle nav caret>
+              <Image className="img-user-navbar" src={props.user.avatar.small_url} />
+            </DropdownToggle>
+            <DropdownMenu >
+              <DropdownItem onClick={logout}>
                   Sign Out
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
-  )
-}
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </Nav>
+      </Collapse>
+    </Navbar>
+  </div>
+)
 
 UserNavigation.propTypes = dashboardPropTypes
 

@@ -1,23 +1,33 @@
 import { connect } from 'react-redux'
-import { compose, withHandlers } from 'recompose'
-
+import { bindActionCreators } from 'redux'
+import { compose, withHandlers, lifecycle } from 'recompose'
+import { logoutUser, setCurrentUser } from 'actions/Auth'
 import UserNavigationView from 'components/header/UserNavigation'
-import { logoutUser } from 'actions/Auth'
 
 export function mapStateToProps(state) {
-  const user = state.auth.user  
-  
+  const { user } = state.auth
+
   return { user }
 }
+
+const mapDispatchToProps = dispatch => ({
+  logoutUser: bindActionCreators(logoutUser, dispatch),
+  setCurrentUser: bindActionCreators(setCurrentUser, dispatch),
+})
 
 export default compose(
   connect(
     mapStateToProps,
-    { logoutUser }
+    mapDispatchToProps
   ),
   withHandlers({
     logout: props => () => {
       props.logoutUser()
-    }
-  })
+    },
+  }),
+  lifecycle({
+    componentDidMount() {
+      this.props.setCurrentUser()
+    },
+  }),
 )(UserNavigationView)
