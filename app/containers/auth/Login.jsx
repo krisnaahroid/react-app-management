@@ -24,9 +24,7 @@ class Login extends React.Component {
       )
     }
 
-    return (
-      <div />
-    )
+    return null
   }
 
   render() {

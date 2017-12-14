@@ -17,7 +17,7 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
   const response = await post(dispatch, 'login', { email, password }, false)
 
   if (response.meta.status) {
-    dispatch({ type: AUTH_USER, payload: response.data.user })
+    dispatch({ type: AUTH_USER })
 
     localStorage.setItem('token', response.data.token)
     History.push('/')

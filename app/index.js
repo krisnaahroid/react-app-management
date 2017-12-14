@@ -13,8 +13,8 @@ const store = configureStore()
 const token = localStorage.getItem('token')
 
 if (token) {
-  store.dispatch({ type: AUTH_USER })
   store.dispatch(setCurrentUser())
+  store.dispatch({ type: AUTH_USER })
 }
 
 ReactDOM.render(
