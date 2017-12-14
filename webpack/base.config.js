@@ -5,7 +5,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var appConfig = {
   site_env: process.env.SITE_ENV || 'development', // e.g. staging, edge
-  api_url: process.env.API_URL   || 'http://localhost:3000'
+  api_url:  process.env.API_URL   || 'http://localhost:3000',
+  asset_url: (process.env.NODE_ENV === 'development' ? null : 'http://localhost:3000')
 }
 
 var postcssLoaderOptions = {
@@ -21,7 +22,7 @@ var config = {
     filename: (process.env.NODE_ENV === 'production' ? 'javascripts/[name]-[hash].js' : 'javascripts/[name].js'),
     sourceMapFilename: (process.env.NODE_ENV === 'production' ? 'javascripts/[name]-[hash].js.map' : 'javascripts/[name].js.map'),
   },
-  cache: true,
+  cache: false,
   module: {
     rules: [
       {

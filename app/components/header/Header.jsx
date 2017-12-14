@@ -2,6 +2,7 @@ import React from 'react'
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap'
 import { NavLink as RRNavLink } from 'react-router-dom'
 import Brand from './Brand'
+import UserNavigation from './UserNavigation'
 
 class Header extends React.Component {
   constructor() {
@@ -23,10 +24,9 @@ class Header extends React.Component {
     return (
       <div>
         <Navbar color="faded" light expand="md">
+          <UserNavigation />
           <Brand />
-
           <NavbarToggler onClick={this.toggle} />
-
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>

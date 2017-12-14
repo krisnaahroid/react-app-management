@@ -11,14 +11,14 @@ class App extends React.PureComponent {
         <Header />
       )
     }
-    return ''
+
+    return null
   }
 
   render() {
     return (
       <Container>
         {this.renderLinks()}
-
         {this.props.children}
       </Container>
     )
@@ -30,6 +30,9 @@ App.propTypes = {
   authenticated: PropTypes.bool,
 }
 
-const mapStateToProps = state => ({ authenticated: state.auth.authenticated })
+const mapStateToProps = state => ({
+  authenticated: state.auth.authenticated,
+  user: state.auth.user,
+})
 
 export default connect(mapStateToProps)(App)

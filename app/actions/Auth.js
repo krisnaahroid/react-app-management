@@ -26,7 +26,7 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
   }
 }
 
-export const getCurrentUser = () => async (dispatch) => {
+export const setCurrentUser = () => async (dispatch) => {
   const response = await get(dispatch, 'current_user', {}, true)
 
   if (response.meta.status) {

@@ -7,21 +7,28 @@ import {
 
 const initialState = {
   authenticated: false,
-  user: {},
+  user: {
+    avatar: {
+      url: '',
+      small_url: '',
+      big_url: '',
+      thumb_url: '',
+    },
+  },
 }
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case AUTH_USER:
       return {
-        ...state, error: '', authenticated: true, user: (action.payload || {}),
+        ...state, error: '', authenticated: true,
       }
     case SET_CURRENT_USER:
       return {
-        ...state, error: '', authenticated: true, user: action.payload.attributes,
+        ...state, error: '', user: action.payload.attributes,
       }
     case UNAUTH_USER:
-      return { ...state, authenticated: false, user: {} }
+      return { ...state, authenticated: false }
     case AUTH_ERROR:
       return { ...state, error: action.payload }
     default:
