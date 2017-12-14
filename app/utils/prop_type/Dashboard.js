@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types'
 
-const avatarShape = PropTypes.shape({
-  url: PropTypes.string,
-})
-
 export const dashboardPropTypes = {
   user: PropTypes.shape({
     avatar: PropTypes.shape({
-      big: avatarShape,
-      small: avatarShape,
-      thumb: avatarShape,
+      big_url: PropTypes.string,
+      small_url: PropTypes.string,
+      thumb_url: PropTypes.string,
       url: PropTypes.string,
     }),
     email: PropTypes.string,
@@ -17,6 +13,6 @@ export const dashboardPropTypes = {
     name: PropTypes.string,
     phone_number: PropTypes.string,
     rating: PropTypes.number,
-    wallet: PropTypes.string,
+    wallet: PropTypes.number,
   }),
 }
