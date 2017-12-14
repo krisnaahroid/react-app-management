@@ -1,38 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Header from 'components/header/Header'
-import { Container } from 'reactstrap'
 import { connect } from 'react-redux'
+import { compose } from 'recompose'
+import { withRouter } from 'react-router'
+import MainView from 'components/Main'
 
-class App extends React.PureComponent {
-  renderLinks() {
-    if (this.props.authenticated) {
-      return (
-        <Header />
-      )
-    }
+export function mapStateToProps(state) {
+  const {
+    authenticated,
+  } = state.auth
 
-    return null
-  }
-
-  render() {
-    return (
-      <Container>
-        {this.renderLinks()}
-        {this.props.children}
-      </Container>
-    )
-  }
+  return { authenticated }
 }
 
-App.propTypes = {
-  children: PropTypes.node,
-  authenticated: PropTypes.bool,
-}
-
-const mapStateToProps = state => ({
-  authenticated: state.auth.authenticated,
-  user: state.auth.user,
-})
-
-export default connect(mapStateToProps)(App)
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(MainView)

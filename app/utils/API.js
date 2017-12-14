@@ -18,7 +18,7 @@ const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
       reqArgs.push(opts.data || {})
     }
 
-    reqArgs.push(opts.requiresAuth ? { headers: { Authorization: localStorage.getItem('token'), 'Content-Type': 'application/json', Accept: 'application/vnd.kokoro.v1+json' } } : {})
+    reqArgs.push(opts.requiresAuth ? { headers: { Authorization: sessionStorage.getItem('token'), 'Content-Type': 'application/json', Accept: 'application/vnd.kokoro.v1+json' } } : {})
 
     const response = await axios[requestType](...reqArgs)
 
@@ -36,14 +36,14 @@ const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
 }
 
 
-export const post = (dispatch, endpoint, data, requiresAuth) =>
+export const httpPost = (dispatch, endpoint, data, requiresAuth) =>
   httpRequest(dispatch, POST, { endpoint, data, requiresAuth })
 
-export const put = async (dispatch, endpoint, data, requiresAuth) =>
+export const httpPut = async (dispatch, endpoint, data, requiresAuth) =>
   httpRequest(dispatch, PUT, { endpoint, data, requiresAuth })
 
-export const get = async (dispatch, endpoint, requiresAuth) =>
+export const httpGet = async (dispatch, endpoint, requiresAuth) =>
   httpRequest(dispatch, GET, { endpoint, requiresAuth })
 
-export const del = async (dispatch, endpoint, requiresAuth) =>
+export const httpDel = async (dispatch, endpoint, requiresAuth) =>
   httpRequest(dispatch, DELETE, { endpoint, requiresAuth })

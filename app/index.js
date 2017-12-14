@@ -10,7 +10,7 @@ import History from './history'
 import Routes from './routes'
 
 const store = configureStore()
-const token = localStorage.getItem('token')
+const token = sessionStorage.getItem('token')
 
 if (token) {
   store.dispatch({ type: AUTH_USER })

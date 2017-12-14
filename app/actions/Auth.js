@@ -1,5 +1,5 @@
 import History from 'app/history'
-import { post, get } from 'utils/API'
+import { httpPost, httpGet } from 'utils/API'
 
 import {
   AUTH_USER,
@@ -14,12 +14,12 @@ export const authError = error => ({
 })
 
 export const loginUser = ({ email, password }) => async (dispatch) => {
-  const response = await post(dispatch, 'login', { email, password }, false)
+  const response = await httpPost(dispatch, 'login', { email, password }, false)
 
   if (response.meta.status) {
-    dispatch({ type: AUTH_USER, payload: response.data.user })
+    sessionStorage.setItem('token', response.data.token)
+    dispatch({ type: AUTH_USER })
 
-    localStorage.setItem('token', response.data.token)
     History.push('/')
   } else {
     dispatch(authError(response.meta.message))
@@ -27,22 +27,13 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
 }
 
 export const setCurrentUser = () => async (dispatch) => {
-  const response = await get(dispatch, 'current_user', {}, true)
+  const response = await httpGet(dispatch, 'current_user', {}, true)
 
-  if (response.meta.status) {
-    dispatch({
-      type: SET_CURRENT_USER,
-      payload: response.data,
-    })
-  } else {
-    localStorage.removeItem('token')
-    dispatch({ type: UNAUTH_USER })
-    History.push('/login')
-  }
+  dispatch({ type: SET_CURRENT_USER, payload: response.data })
 }
 
 export const logoutUser = () => {
-  localStorage.removeItem('token')
+  sessionStorage.removeItem('token')
 
   return { type: UNAUTH_USER }
 }
