@@ -2,7 +2,6 @@
  * We do complete rewrite of reactstrap for some components
  * It's still based on the Reactstrap, but with updated some attributes to follow the qstrap selector
 */
-export { SVGIcon } from './SVGIcon'
 export { Image } from './Image'
 
 /*

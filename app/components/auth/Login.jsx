@@ -15,31 +15,39 @@ const showErrorMessage = (errorMessage) => {
 const Login = ({
   email, password, errorMessage, handleFormSubmit, onChangeEmail, onChangePassword,
 }) => (
-  <div>
-    <img src="/assets/logo/logo.png" alt="kokoro logo" />
+  <div className="row login-box">
+    <div className="col-lg-12 text-center">
+      <img src="/assets/logo/logo.png" className="kokoro-logo" alt="kokoro logo" />
+    </div>
 
-    <form onSubmit={handleFormSubmit}>
-      <fieldset className="form-group">
-        <label>Email:</label>
-        <input className="form-control" name="email" type="text" value={email} onChange={onChangeEmail} />
-      </fieldset>
+    <div className="col-lg-12 text-center">
+      <h1>
+        Welcome To <span className="blue-text">Kokoro</span> Admin Manager
+      </h1>
 
-      <fieldset className="form-group">
-        <label>Password:</label>
-        <input className="form-control" name="password" type="password" value={password} onChange={onChangePassword} />
-      </fieldset>
+      <form onSubmit={handleFormSubmit}>
+        <fieldset className="form-group">
+          <label>Email:</label>
+          <input className="form-control" name="email" type="text" value={email} onChange={onChangeEmail} />
+        </fieldset>
 
-      {showErrorMessage(errorMessage)}
+        <fieldset className="form-group">
+          <label>Password:</label>
+          <input className="form-control" name="password" type="password" value={password} onChange={onChangePassword} />
+        </fieldset>
 
-      <button action="submit" className="btn btn-primary">Sign in</button>
-    </form>
+        {showErrorMessage(errorMessage)}
+
+        <button action="submit" className="btn btn-primary">Sign in</button>
+      </form>
+    </div>
   </div>
 )
 
 Login.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string,
-  errorMessage: PropTypes.func,
+  errorMessage: PropTypes.string,
   handleFormSubmit: PropTypes.func,
   onChangePassword: PropTypes.func,
   onChangeEmail: PropTypes.func,

@@ -12,6 +12,10 @@ $base-font-size:         14px !default;
 $white:                  #FFF !default;
 $text-black:             #24243F !default;
 $background-color:       $white !default;
+$text-gray:              #9B9B9B !default;
+$gainsboro:              #DDD !default;
+$light-grey:             #D0D0D0 !default;
+$picton-blue:            #63AFCB !default;
 
 // Define table variable
 $head-background-color:  #F6F6F6 !default;
@@ -21,7 +25,7 @@ $text-green:             #2A5629 !default;
 $border-top-color:       #E4E4E4 !default;
 $border-bottom-color:    #EEE !default;
 $td-background-color:    #FAFAFA !default;
-$nav-link:               #9B9B9B !default;
+$nav-link:               $text-gray;
 
 // Define common padding and border radius sizes and more.
 $border-radius:          6px !default;
