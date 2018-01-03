@@ -1,8 +1,10 @@
 import axios from 'axios'
+import { CookieStorage } from 'cookie-storage'
 import { POST, PUT, GET, DELETE } from 'constants/ActionTypes'
 
 const API_URL = process.env.APP_CONFIG.api_url
 const NAME_SPACE = 'admin'
+const cookieStorage = new CookieStorage()
 
 const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
   try {
@@ -18,7 +20,7 @@ const httpRequest = async (dispatch, requestType = GET, opts = {}) => {
       reqArgs.push(opts.data || {})
     }
 
-    reqArgs.push(opts.requiresAuth ? { headers: { Authorization: sessionStorage.getItem('token'), 'Content-Type': 'application/json', Accept: 'application/vnd.kokoro.v1+json' } } : {})
+    reqArgs.push(opts.requiresAuth ? { headers: { Authorization: cookieStorage.getItem('token'), 'Content-Type': 'application/json', Accept: 'application/vnd.kokoro.v1+json' } } : {})
 
     const response = await axios[requestType](...reqArgs)
 

@@ -1,3 +1,4 @@
+import { CookieStorage } from 'cookie-storage'
 import History from 'app/history'
 import { httpPost, httpGet } from 'utils/API'
 
@@ -8,6 +9,8 @@ import {
   AUTH_ERROR,
 } from 'constants/ActionTypes'
 
+const cookieStorage = new CookieStorage()
+
 export const authError = error => ({
   type: AUTH_ERROR,
   payload: error,
@@ -17,7 +20,7 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
   const response = await httpPost(dispatch, 'login', { email, password }, false)
 
   if (response.meta.status) {
-    sessionStorage.setItem('token', response.data.token)
+    cookieStorage.setItem('token', response.data.token)
     dispatch({ type: AUTH_USER })
 
     History.push('/')
@@ -33,7 +36,7 @@ export const setCurrentUser = () => async (dispatch) => {
 }
 
 export const logoutUser = () => {
-  sessionStorage.removeItem('token')
+  cookieStorage.removeItem('token')
 
   return { type: UNAUTH_USER }
 }

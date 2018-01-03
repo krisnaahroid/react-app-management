@@ -9,8 +9,11 @@ import ReactDOM from 'react-dom'
 import History from './history'
 import Routes from './routes'
 
+import { CookieStorage } from 'cookie-storage'
+
+const cookieStorage = new CookieStorage()
 const store = configureStore()
-const token = sessionStorage.getItem('token')
+const token = cookieStorage.getItem('token')
 
 if (token) {
   store.dispatch({ type: AUTH_USER })
