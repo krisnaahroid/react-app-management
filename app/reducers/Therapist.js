@@ -3,7 +3,7 @@ import {
 } from 'constants/ActionTypes'
 
 const initialState = {
-  items: []
+  items: [],
 }
 
 export const reducer = (state = initialState, action) => {

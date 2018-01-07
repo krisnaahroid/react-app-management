@@ -6,7 +6,7 @@ import DashboardView from 'components/dashboard/Dashboard'
 
 export function mapStateToProps(state) {
   return {
-    therapists: state.therapist.items
+    therapists: state.therapist.items,
   }
 }
 

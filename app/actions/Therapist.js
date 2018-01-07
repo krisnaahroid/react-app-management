@@ -1,4 +1,3 @@
-import History from 'app/history'
 import { httpGet } from 'utils/API'
 
 import {
