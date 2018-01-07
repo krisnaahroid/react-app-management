@@ -11,7 +11,9 @@ import LoginView from 'components/auth/Login'
 import { loginUser } from 'actions/Auth'
 
 export function mapStateToProps(state) {
-  const { error } = state.auth
+  const {
+    error,
+  } = state.auth
 
   return {
     errorMessage: error,

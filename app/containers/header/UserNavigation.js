@@ -5,7 +5,9 @@ import { logoutUser, setCurrentUser } from 'actions/Auth'
 import UserNavigationView from 'components/header/UserNavigation'
 
 export function mapStateToProps(state) {
-  const { user } = state.auth
+  const {
+    user,
+  } = state.auth
 
   return { user }
 }

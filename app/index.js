@@ -3,14 +3,17 @@ import 'styles'
 import configureStore from 'store/configureStore'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Router, Switch } from 'react-router-dom'
+import { CookieStorage } from 'cookie-storage'
+
 import { AUTH_USER } from 'constants/ActionTypes'
 import { setCurrentUser } from 'actions/Auth'
 import ReactDOM from 'react-dom'
 import History from './history'
 import Routes from './routes'
 
+const cookieStorage = new CookieStorage()
 const store = configureStore()
-const token = sessionStorage.getItem('token')
+const token = cookieStorage.getItem('token')
 
 if (token) {
   store.dispatch({ type: AUTH_USER })
