@@ -51,7 +51,123 @@
   }
 }
 
-@include breakpoint(xxxs){
+@media (max-width: $screen-md) {
+  h1 {
+    font-size: 36px;
+
+    .blue-text {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .login-box {
+    padding-top: 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+
+      .blue-text {
+        font-size: 24px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      border-radius: 20px;
+      padding: 0.8rem 1.5rem;
+      border: solid 1px #979797;
+
+      & ::placeholder {
+        color: #2A5629;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 20px;
+      padding: 13px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    form {
+      padding: 0;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+
+    .kokoro-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .login-box {
+    padding-top: 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+
+      .blue-text {
+        font-size: 24px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      border-radius: 20px;
+      padding: 0.8rem 1.5rem;
+      border: solid 1px #979797;
+
+      & ::placeholder {
+        color: #2A5629;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 20px;
+      padding: 13px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    form {
+      padding: 0;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+
+    .kokoro-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+}
+
+@media (max-width: $screen-xxs) {
   .login-box {
     padding-top: 0;
 
@@ -64,6 +180,7 @@
       .blue-text {
         font-size: 24px;
       }
+
       br {
         display: none;
       }
@@ -71,7 +188,7 @@
 
     input {
       border-radius: 20px;
-      padding: 0.80rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       border: solid 1px #979797;
 
       & ::placeholder {
@@ -90,7 +207,7 @@
     }
 
     form {
-      padding: 0px;
+      padding: 0;
       width: 100%;
       max-width: 320px;
       margin: 10px auto;
@@ -100,120 +217,6 @@
       display: block;
       margin: 20px auto;
       max-width: 200px;
-    }
-  }
-}
-
-@include breakpoint(xxs){
-  .login-box {
-    padding-top: 0;
-
-    h1 {
-      font-size: 24px;
-      line-height: 30px;
-      text-align: center;
-
-      .blue-text {
-        font-size: 24px;
-      }
-      br {
-        display: none;
-      }
-    }
-
-    input {
-      border-radius: 20px;
-      padding: 0.80rem 1.5rem;
-      border: solid 1px #979797;
-
-      & ::placeholder {
-        color: #2A5629;
-      }
-    }
-
-    button {
-      width: 100%;
-      border-radius: 20px;
-      padding: 13px;
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-
-    form {
-      padding: 0px;
-      width: 100%;
-      max-width: 320px;
-      margin: 10px auto;
-    }
-
-    .kokoro-logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 200px;
-    }
-  }
-}
-
-@include breakpoint(xs){
-  .login-box {
-    padding-top: 0;
-
-    h1 {
-      font-size: 24px;
-      line-height: 30px;
-      text-align: center;
-
-      .blue-text {
-        font-size: 24px;
-      }
-      br {
-        display: none;
-      }
-    }
-
-    input {
-      border-radius: 20px;
-      padding: 0.80rem 1.5rem;
-      border: solid 1px #979797;
-
-      & ::placeholder {
-        color: #2A5629;
-      }
-    }
-
-    button {
-      width: 100%;
-      border-radius: 20px;
-      padding: 13px;
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-
-    form {
-      padding: 0px;
-      width: 100%;
-      max-width: 320px;
-      margin: 10px auto;
-    }
-
-    .kokoro-logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 200px;
-    }
-  }
-}
-
-@include breakpoint(sm){
-  h1 {
-    font-size: 36px !important;
-
-    .blue-text {
-      font-size: 36px !important;
     }
   }
 }
