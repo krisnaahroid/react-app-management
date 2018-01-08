@@ -26,8 +26,8 @@ body {
 }
 
 body.kokoro {
-  @media (max-width: $screen-sm) {
-    padding-top: 90px;
+  @include breakpoint(xxxs){
+    padding-top: 30px;
   }
 }
 

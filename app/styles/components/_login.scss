@@ -1,23 +1,219 @@
 .login-box {
-  padding-top: 160px;
+  padding-top: 10%;
 
   h1 {
-    font-size: 18px;
-    color: $text-gray;
-    font-weight: bold;
+    font-size: 48px;
+    color: #9B9B9B;
     margin-bottom: 40px;
+    line-height: 55px;
+    font-weight: normal;
+  }
+
+  input {
+    border: none;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    border-bottom: solid 1px #979797;
+
+    & ::placeholder {
+      color: #2A5629;
+    }
+  }
+
+  button {
+    background-color: #2A5629;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 0;
+    float: right;
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   form {
     padding: 20px;
-    border: 1px solid $gainsboro;
     border-radius: $border-radius-lg;
-    box-shadow: 0 0 2px $light-grey;
-    width: 500px;
+    width: 340px;
     text-align: left;
-    margin: 0 auto;
+    margin-top: 120px;
   }
 
   .kokoro-logo { margin-bottom: 70px; }
-  .blue-text { color: $picton-blue; }
+
+  .blue-text {
+    color: #2A5629;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@include breakpoint(xxxs){
+  .login-box {
+    padding-top: 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      margin: 0 auto 40px;
+
+      .blue-text {
+        font-size: 24px;
+      }
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      border-radius: 20px;
+      padding: 0.80rem 1.5rem;
+      border: solid 1px #979797;
+
+      & ::placeholder {
+        color: #2A5629;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 20px;
+      padding: 13px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    form {
+      padding: 0px;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+
+    .kokoro-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+}
+
+@include breakpoint(xxs){
+  .login-box {
+    padding-top: 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+
+      .blue-text {
+        font-size: 24px;
+      }
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      border-radius: 20px;
+      padding: 0.80rem 1.5rem;
+      border: solid 1px #979797;
+
+      & ::placeholder {
+        color: #2A5629;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 20px;
+      padding: 13px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    form {
+      padding: 0px;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+
+    .kokoro-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+}
+
+@include breakpoint(xs){
+  .login-box {
+    padding-top: 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+
+      .blue-text {
+        font-size: 24px;
+      }
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      border-radius: 20px;
+      padding: 0.80rem 1.5rem;
+      border: solid 1px #979797;
+
+      & ::placeholder {
+        color: #2A5629;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 20px;
+      padding: 13px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    form {
+      padding: 0px;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+
+    .kokoro-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+}
+
+@include breakpoint(sm){
+  h1 {
+    font-size: 36px !important;
+
+    .blue-text {
+      font-size: 36px !important;
+    }
+  }
 }

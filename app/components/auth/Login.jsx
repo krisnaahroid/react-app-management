@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
+import { Button, Row, Col, Form, FormGroup, Input } from 'reactstrap'
 
 const showErrorMessage = (errorMessage) => {
   if (errorMessage) {
     return (
       <div className="alert alert-danger">
-        Oops! {errorMessage}
+      Oops! {errorMessage}
       </div>
     )
   }
@@ -15,33 +16,26 @@ const showErrorMessage = (errorMessage) => {
 const Login = ({
   email, password, errorMessage, handleFormSubmit, onChangeEmail, onChangePassword,
 }) => (
-  <div className="row login-box">
-    <div className="col-lg-12 text-center">
+  <Row className="login-box">
+    <Col xs="12" sm="12" md="6" lg="6" xl="6">
       <img src="/assets/logo/logo.png" className="kokoro-logo" alt="kokoro logo" />
-    </div>
-
-    <div className="col-lg-12 text-center">
       <h1>
-        Welcome To <span className="blue-text">Kokoro</span> Admin Manager
+        Welcome to <br /> <span className="blue-text">Kokoro</span> <br /> Admin Manager
       </h1>
-
-      <form onSubmit={handleFormSubmit}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <input className="form-control" name="email" type="text" value={email} onChange={onChangeEmail} />
-        </fieldset>
-
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <input className="form-control" name="password" type="password" value={password} onChange={onChangePassword} />
-        </fieldset>
-
+    </Col>
+    <Col xs="12" sm="12" md="6" lg="6" xl="6">
+      <Form onSubmit={handleFormSubmit}>
+        <FormGroup>
+          <Input type="email" name="email" id="email" value={email} onChange={onChangeEmail} placeholder="Username"  />
+        </FormGroup>
+        <FormGroup>
+          <Input type="password" name="password" value={password} onChange={onChangePassword} placeholder="Password" />
+        </FormGroup>
         {showErrorMessage(errorMessage)}
-
-        <button action="submit" className="btn btn-primary">Sign in</button>
-      </form>
-    </div>
-  </div>
+        <Button type="submit" className="btn btn-primary">LOGIN</Button>
+      </Form>
+    </Col>
+  </Row>
 )
 
 Login.propTypes = {
