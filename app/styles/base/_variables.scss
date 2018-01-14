@@ -17,11 +17,15 @@ $gainsboro:              #DDD !default;
 $light-grey:             #D0D0D0 !default;
 $picton-blue:            #63AFCB !default;
 
+// Color
+$dusty-gray:             #979797 !default;
+$everglade:              #2A5629 !default;
+
 // Define table variable
 $head-background-color:  #F6F6F6 !default;
 $text-soft-grey:         #F9F9F9 !default;
 $text-grey:              #888 !default;
-$text-green:             #2A5629 !default;
+$text-green:             $everglade !default;
 $border-top-color:       #E4E4E4 !default;
 $border-bottom-color:    #EEE !default;
 $td-background-color:    #FAFAFA !default;
