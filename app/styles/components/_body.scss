@@ -26,8 +26,8 @@ body {
 }
 
 body.kokoro {
-  @media (max-width: $screen-sm) {
-    padding-top: 90px;
+  @media (max-width: $screen-xxs) {
+    padding-top: 30px;
   }
 }
 
