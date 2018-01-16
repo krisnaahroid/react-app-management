@@ -30,22 +30,22 @@ const TherapistsView = ({ therapists }) => (
       </thead>
       <tbody>
         {
-            therapists.map((item, i) => (
-              <tr key={i}>
-                <td className="therapist">
-                  {showAvatar(item.attributes.avatar)}
-                  {item.attributes.name}
-                </td>
-                <td>{item.attributes.order}</td>
-                <td>
-                  <StarRatingComponent name="rate2" editing={false} starCount={5} value={item.attributes.rating} />
-                </td>
-                <td>{item.attributes.income}</td>
-                <td>{item.attributes.duration}</td>
-                <td>{startCase(item.attributes.gender)}</td>
-              </tr>
-            ))
-          }
+          therapists.map((item, i) => (
+            <tr key={i}>
+              <td className="therapist">
+                {showAvatar(item.attributes.avatar)}
+                {item.attributes.name}
+              </td>
+              <td>{item.attributes.order}</td>
+              <td>
+                <StarRatingComponent name="rate2" editing={false} starCount={5} value={item.attributes.rating} />
+              </td>
+              <td>{item.attributes.income}</td>
+              <td>{item.attributes.duration}</td>
+              <td>{startCase(item.attributes.gender)}</td>
+            </tr>
+          ))
+        }
       </tbody>
     </Table>
   </div>
