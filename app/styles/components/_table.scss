@@ -1,3 +1,13 @@
+.therapist-view-table {
+  h1 {
+    font-size: 20px;
+    font-weight: 300;
+    color: $everglade;
+    padding: 10px 0;
+    margin-top: 30px;
+  }
+}
+
 .kokoro-table {
   border-collapse: separate;
   border-spacing: 0;
@@ -9,6 +19,13 @@
   font-weight: 300;
   color: $text-grey;
   text-align: center;
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
 
   td.therapist {
     text-align: left;
@@ -24,6 +41,7 @@
     font-size: 1.143rem;
     line-height: 1.19;
     padding: 14px;
+    text-align: center;
   }
 
   td,
