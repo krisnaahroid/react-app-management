@@ -3,6 +3,7 @@
  * It's still based on the Reactstrap, but with updated some attributes to follow the qstrap selector
 */
 export { Image } from './Image'
+export { Pagination } from './Pagination'
 
 /*
  * Export other modules from Reactstrap
@@ -59,7 +60,6 @@ export {
   NavLink,
   NavbarBrand,
   NavbarToggler,
-  Pagination,
   PaginationItem,
   PaginationLink,
   Panel,
