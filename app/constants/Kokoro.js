@@ -1,0 +1,1 @@
+export const MAX_PAGINATION_LENGTH = 9

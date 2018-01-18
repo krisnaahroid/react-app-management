@@ -13,7 +13,7 @@ const showAvatar = (image) => {
   return (<img src="/assets/avatar_no_image.png" className="avatar" alt="" />)
 }
 
-const TherapistsView = ({ therapists }) => (
+const TherapistTableListView = ({ therapists }) => (
   <div className="therapist-view-table">
     <h1>Therapist</h1>
 
@@ -51,8 +51,8 @@ const TherapistsView = ({ therapists }) => (
   </div>
 )
 
-TherapistsView.propTypes = {
+TherapistTableListView.propTypes = {
   therapists: PropTypes.array.isRequired,
 }
 
-export default TherapistsView
+export default TherapistTableListView
