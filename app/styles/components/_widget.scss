@@ -1,0 +1,16 @@
+.top-widget-container {
+  border-bottom: 1px solid #ddd;
+  padding: 30px 5px;
+  float: left;
+  width: 100%;
+
+  .widget-item {
+    h1 {
+      color: #2a5629;
+    }
+
+    float: left;
+    margin-right: 30px;
+    color: #727272;
+  }
+}

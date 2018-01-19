@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
 import TherapistTableListView from 'components/therapist/TherapistTableListView'
+import StatsChart from 'components/dashboard/StatsChart'
+import Widget from 'components/dashboard/Widget'
 import { Pagination } from 'components/strap'
 
 const Dashboard = ({
-  therapists, totalCount, currentPage, getMoreList,
+  therapists, totalCount, currentPage, getMoreList, statOrder, statIncome, statPendingOrder
 }) => (
   <div>
     <div className="row">
       <div className="col-lg-12">
+        <Widget order={statOrder} income={statIncome} pendingOrder={statPendingOrder} />
+        <StatsChart />
         <TherapistTableListView therapists={therapists} />
 
         <Pagination

@@ -2,17 +2,22 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { compose, withState, lifecycle, withHandlers } from 'recompose'
 import { fetchTherapist } from 'actions/Therapist'
+import { fetchStats } from 'actions/Dashboard'
 import DashboardView from 'components/dashboard/Dashboard'
 
 export function mapStateToProps(state) {
   return {
     therapists: state.therapist.items,
     totalCount: state.therapist.meta.total_count,
+    statOrder: state.dashboard.order,
+    statIncome: state.dashboard.income,
+    statPendingOrder: state.dashboard.pending_order,
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   fetchTherapist: bindActionCreators(fetchTherapist, dispatch),
+  fetchStats: bindActionCreators(fetchStats, dispatch),
 })
 
 export default compose(
@@ -24,6 +29,7 @@ export default compose(
   lifecycle({
     componentDidMount() {
       this.props.fetchTherapist(this.props.currentPage)
+      this.props.fetchStats()
     },
   }),
   withHandlers({
