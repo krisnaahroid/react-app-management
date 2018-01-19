@@ -24,7 +24,7 @@ const Header = () => (
             <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/order-history" activeClassName="active" tag={RRNavLink}>Order</NavLink>
+            <NavLink to="/order" activeClassName="active" tag={RRNavLink}>Order</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/schedules" activeClassName="active" tag={RRNavLink}>Schedule</NavLink>

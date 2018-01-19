@@ -1,0 +1,28 @@
+.order-nav {
+  padding: 30px 0;
+  margin-bottom: 20px;
+
+  .link-order {
+    float: left;
+
+    &.active {
+      border-bottom: 3px solid $everglade;
+    }
+  }
+
+  .link-order-history {
+    float: right;
+
+    &.active {
+      border-bottom: 3px solid $everglade;
+    }
+  }
+
+  a {
+    color: $everglade;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}

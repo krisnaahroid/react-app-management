@@ -8,7 +8,7 @@ const OrderHistory = ({
   orders, totalCount, currentPage, getMoreList,
 }) => (
   <div>
-    <OrderNav activeOrderHistory="active" />
+    <OrderNav activeOrder="active" />
 
     <Table className="kokoro-table order-history">
       <thead>
