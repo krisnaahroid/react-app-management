@@ -19,7 +19,7 @@ const StatsChart = ({ dataChart }) => (
 )
 
 StatsChart.propTypes = {
-  dataChart: PropTypes.object,
+  dataChart: PropTypes.array,
 }
 
 export default StatsChart
