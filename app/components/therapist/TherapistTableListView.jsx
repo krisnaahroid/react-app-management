@@ -1,17 +1,7 @@
 import PropTypes from 'prop-types'
-import { Table } from 'components/strap'
+import { Table, Avatar } from 'components/strap'
 import { startCase } from 'lodash'
 import StarRatingComponent from 'react-star-rating-component'
-
-const showAvatar = (image) => {
-  if (image.small_url) {
-    return (
-      <img src={image.small_url} className="avatar" alt="" />
-    )
-  }
-
-  return (<img src="/assets/avatar_no_image.png" className="avatar" alt="" />)
-}
 
 const TherapistTableListView = ({ therapists }) => (
   <div className="therapist-view-table">
@@ -31,7 +21,7 @@ const TherapistTableListView = ({ therapists }) => (
           therapists.map((item, i) => (
             <tr key={i}>
               <td className="therapist">
-                {showAvatar(item.attributes.avatar)}
+                <Avatar image={item.attributes.avatar} />
                 {item.attributes.name}
               </td>
               <td>{item.attributes.order}</td>
