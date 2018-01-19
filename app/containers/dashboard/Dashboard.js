@@ -12,6 +12,7 @@ export function mapStateToProps(state) {
     statOrder: state.dashboard.order,
     statIncome: state.dashboard.income,
     statPendingOrder: state.dashboard.pending_order,
+    dataChart: state.dashboard.chart,
   }
 }
 
