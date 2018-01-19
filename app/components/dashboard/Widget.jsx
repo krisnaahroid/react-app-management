@@ -16,4 +16,10 @@ const Widget = ({ order, income, pendingOrder }) => (
   </div>
 )
 
+Widget.propTypes = {
+  order: PropTypes.number,
+  income: PropTypes.number,
+  pendingOrder: PropTypes.number,
+}
+
 export default Widget

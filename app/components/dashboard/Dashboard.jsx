@@ -5,7 +5,7 @@ import Widget from 'components/dashboard/Widget'
 import { Pagination } from 'components/strap'
 
 const Dashboard = ({
-  therapists, totalCount, currentPage, getMoreList, statOrder, statIncome, statPendingOrder, dataChart
+  therapists, totalCount, currentPage, getMoreList, statOrder, statIncome, statPendingOrder, dataChart,
 }) => (
   <div>
     <div className="row">
@@ -31,6 +31,10 @@ Dashboard.propTypes = {
   totalCount: PropTypes.number,
   currentPage: PropTypes.number,
   getMoreList: PropTypes.func,
+  statOrder: PropTypes.number,
+  statIncome: PropTypes.number,
+  statPendingOrder: PropTypes.number,
+  dataChart: PropTypes.array,
 }
 
 export default Dashboard

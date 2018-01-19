@@ -1,16 +1,16 @@
 .top-widget-container {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $border-bottom-color;
   padding: 30px 5px;
   float: left;
   width: 100%;
 
   .widget-item {
     h1 {
-      color: #2a5629;
+      color: $everglade;
     }
 
     float: left;
     margin-right: 30px;
-    color: #727272;
+    color: $text-gray;
   }
 }
