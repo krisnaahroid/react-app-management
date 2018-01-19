@@ -36,7 +36,7 @@ const OrderHistory = ({
     <Table className="kokoro-table order-history">
       <thead>
         <tr>
-          <th>Order Detail</th>
+          <th width="300px">Order Detail</th>
           <th>Service</th>
           <th>Date & Time</th>
           <th>Therapist</th>
