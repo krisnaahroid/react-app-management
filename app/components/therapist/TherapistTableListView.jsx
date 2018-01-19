@@ -15,12 +15,10 @@ const showAvatar = (image) => {
 
 const TherapistTableListView = ({ therapists }) => (
   <div className="therapist-view-table">
-    <h1>Therapist</h1>
-
     <Table className="kokoro-table">
       <thead>
         <tr>
-          <th />
+          <th className="text-left">Therapist</th>
           <th>Order</th>
           <th>Ratings</th>
           <th>Income</th>

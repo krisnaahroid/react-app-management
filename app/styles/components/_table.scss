@@ -29,6 +29,8 @@
 
   td.therapist {
     text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
     color: $text-green;
   }
 
@@ -71,5 +73,18 @@
 
   > :last-child > :last-child > :last-child {
     border-bottom-right-radius: 6px;
+  }
+}
+
+.order-history {
+  td {
+    font-size: 11px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .text-bold-booking {
+    font-size: 13px;
+    font-weight: bold;
   }
 }
