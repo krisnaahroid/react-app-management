@@ -1,18 +1,20 @@
 import { connect } from 'react-redux'
 import { compose, lifecycle, withHandlers, withState } from 'recompose'
 import { bindActionCreators } from 'redux'
-import { fetchOrder } from 'actions/Order'
+import { fetchOrder, fetchTherapists, assignTherapist } from 'actions/Order'
 import OrderView from 'components/order/Order'
 
 export function mapStateToProps(state) {
   return {
-    orders: state.orderHistory.orders,
-    totalCount: state.orderHistory.meta.total_count,
+    orders: state.order.orders,
+    therapists: state.orderTherapist.items,
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   fetchOrder: bindActionCreators(fetchOrder, dispatch),
+  fetchTherapists: bindActionCreators(fetchTherapists, dispatch),
+  assignTherapist: bindActionCreators(assignTherapist, dispatch),
 })
 
 export default compose(
@@ -20,16 +22,24 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  withState('currentPage', 'setCurrentPage', 0),
+  withState('showModal', 'setModal', false),
+  withState('bookingCode', 'setBookingCode', ''),
   lifecycle({
     componentDidMount() {
-      this.props.fetchOrder(this.props.currentPage)
+      this.props.fetchOrder()
+      this.props.fetchTherapists()
     },
   }),
   withHandlers({
-    getMoreList: props => (event, index) => {
-      props.fetchOrder(index + 1)
-      props.setCurrentPage(index)
+    toggle: props => (bookingCode) => {
+      props.fetchTherapists()
+      props.setBookingCode(bookingCode)
+      props.setModal(!props.showModal)
+    },
+    postAssignTherapist: props => (bookingCode, therapistId) => {
+      props.assignTherapist(bookingCode, therapistId)
+      props.fetchOrder()
+      props.setModal(!props.showModal)
     },
   }),
 )(OrderView)

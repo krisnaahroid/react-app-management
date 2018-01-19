@@ -1,11 +1,20 @@
 import PropTypes from 'prop-types'
-import { Table, Pagination } from 'components/strap'
+import { Table, Button } from 'components/strap'
 import OrderStatus from 'components/order/OrderStatus'
 import OrderNav from 'components/order/OrderNav'
 import OrderTherapist from 'components/order/OrderTherapist'
+import AssignTherapistModal from 'components/order/AssignTherapistModal'
+
+const therapistAssign = (therapist, toggle, bookingCode) => {
+  if (therapist) {
+    return null
+  }
+
+  return <Button color="success" size="sm" onClick={() => toggle(bookingCode)}>Assign Therapist</Button>
+}
 
 const OrderHistory = ({
-  orders, totalCount, currentPage, getMoreList,
+  orders, therapists, showModal, toggle, postAssignTherapist, bookingCode,
 }) => (
   <div>
     <OrderNav activeOrder="active" />
@@ -42,6 +51,7 @@ const OrderHistory = ({
               </td>
               <td>
                 <OrderTherapist therapist={item.attributes.therapist} />
+                {therapistAssign(item.attributes.therapist, toggle, item.attributes.booking_code)}
               </td>
               <td>
                 <div className="text-bold-booking"><OrderStatus status={item.attributes.status} /></div>
@@ -54,21 +64,17 @@ const OrderHistory = ({
       </tbody>
     </Table>
 
-    <Pagination
-      className="justify-content-center"
-      dataSize={totalCount}
-      itemsPerPage={8}
-      onPageChange={getMoreList}
-      currentPage={currentPage}
-    />
+    <AssignTherapistModal therapists={therapists} showModal={showModal} bookingCode={bookingCode} assignTherapist={postAssignTherapist} toggle={toggle} />
   </div>
 )
 
 OrderHistory.propTypes = {
   orders: PropTypes.array,
-  totalCount: PropTypes.number,
-  currentPage: PropTypes.number,
-  getMoreList: PropTypes.func,
+  toggle: PropTypes.func,
+  therapists: PropTypes.array,
+  showModal: PropTypes.bool,
+  postAssignTherapist: PropTypes.func,
+  bookingCode: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
 export default OrderHistory

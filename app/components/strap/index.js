@@ -4,6 +4,7 @@
 */
 export { Image } from './Image'
 export { Pagination } from './Pagination'
+export { Avatar } from './Avatar'
 
 /*
  * Export other modules from Reactstrap
