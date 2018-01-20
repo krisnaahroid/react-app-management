@@ -18,7 +18,7 @@ const Widget = ({ order, income, pendingOrder }) => (
 
 Widget.propTypes = {
   order: PropTypes.number,
-  income: PropTypes.number,
+  income: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   pendingOrder: PropTypes.number,
 }
 

@@ -32,7 +32,7 @@ Dashboard.propTypes = {
   currentPage: PropTypes.number,
   getMoreList: PropTypes.func,
   statOrder: PropTypes.number,
-  statIncome: PropTypes.number,
+  statIncome: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   statPendingOrder: PropTypes.number,
   dataChart: PropTypes.array,
 }
