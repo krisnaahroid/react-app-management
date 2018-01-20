@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Table, Button } from 'components/strap'
+import { Table, Button, Pagination } from 'components/strap'
 import OrderStatus from 'components/order/OrderStatus'
 import OrderNav from 'components/order/OrderNav'
 import OrderTherapist from 'components/order/OrderTherapist'
@@ -14,7 +14,7 @@ const therapistAssign = (therapist, toggle, bookingCode) => {
 }
 
 const OrderHistory = ({
-  orders, therapists, showModal, toggle, postAssignTherapist, bookingCode,
+  orders, therapists, totalCount, currentPage, getMoreList, showModal, toggle, postAssignTherapist, bookingCode,
 }) => (
   <div>
     <OrderNav activeOrder="active" />
@@ -64,16 +64,27 @@ const OrderHistory = ({
       </tbody>
     </Table>
 
+    <Pagination
+      className="justify-content-center"
+      dataSize={totalCount}
+      itemsPerPage={8}
+      onPageChange={getMoreList}
+      currentPage={currentPage}
+    />
+
     <AssignTherapistModal therapists={therapists} showModal={showModal} bookingCode={bookingCode} assignTherapist={postAssignTherapist} toggle={toggle} />
   </div>
 )
 
 OrderHistory.propTypes = {
   orders: PropTypes.array,
+  totalCount: PropTypes.number,
+  currentPage: PropTypes.number,
   toggle: PropTypes.func,
   therapists: PropTypes.array,
   showModal: PropTypes.bool,
   postAssignTherapist: PropTypes.func,
+  getMoreList: PropTypes.func,
   bookingCode: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
