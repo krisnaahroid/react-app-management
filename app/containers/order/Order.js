@@ -29,7 +29,6 @@ export default compose(
   lifecycle({
     componentDidMount() {
       this.props.fetchOrder(this.props.currentPage)
-      this.props.fetchTherapists()
     },
   }),
   withHandlers({
@@ -38,7 +37,7 @@ export default compose(
       props.setCurrentPage(index)
     },
     toggle: props => (bookingCode) => {
-      props.fetchTherapists()
+      props.fetchTherapists(bookingCode)
       props.setBookingCode(bookingCode)
       props.setModal(!props.showModal)
     },

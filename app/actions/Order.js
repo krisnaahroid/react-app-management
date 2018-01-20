@@ -1,4 +1,4 @@
-import { httpPost, httpGet } from 'utils/API'
+import { httpPost } from 'utils/API'
 
 import {
   FETCH_ORDER_HISTORY_REQUEST,
@@ -19,8 +19,8 @@ export const fetchOrder = page => async (dispatch) => {
   dispatch({ type: FETCH_ORDER_REQUEST, payload: { data: response.data, meta: response.meta } })
 }
 
-export const fetchTherapists = () => async (dispatch) => {
-  const response = await httpGet(dispatch, 'orders/therapists', true)
+export const fetchTherapists = bookingCode => async (dispatch) => {
+  const response = await httpPost(dispatch, 'orders/therapists', { bookingCode }, true)
 
   dispatch({ type: FETCH_ORDER_THERAPIST_REQUEST, payload: { data: response.data, meta: response.meta } })
 }
