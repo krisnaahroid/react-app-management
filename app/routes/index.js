@@ -6,6 +6,7 @@ import Login from 'containers/auth/Login'
 import Dashboard from 'containers/dashboard/Dashboard'
 import Order from 'containers/order/Order'
 import OrderHistory from 'containers/order/OrderHistory'
+import Schedule from 'containers/schedule/Schedule'
 import RequireAuth from 'components/auth/RequireAuth'
 
 const Routes = () => (
@@ -13,6 +14,7 @@ const Routes = () => (
     <Route exact path="/" component={RequireAuth(Dashboard)} />
     <Route exact path="/order" component={RequireAuth(Order)} />
     <Route exact path="/order/history" component={RequireAuth(OrderHistory)} />
+    <Route exact path="/schedule" component={RequireAuth(Schedule)} />
     <Route exact path="/login" component={Login} />
   </App>
 )

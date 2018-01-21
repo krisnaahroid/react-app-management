@@ -27,7 +27,7 @@ const Header = () => (
             <NavLink to="/order" activeClassName="active" tag={RRNavLink}>Order</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/schedules" activeClassName="active" tag={RRNavLink}>Schedule</NavLink>
+            <NavLink to="/schedule" activeClassName="active" tag={RRNavLink}>Schedule</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/feedback" activeClassName="active" tag={RRNavLink}>Customer Feedback</NavLink>

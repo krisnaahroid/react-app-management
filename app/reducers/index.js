@@ -7,6 +7,7 @@ import { reducer as orderHistoryReducer } from './OrderHistory'
 import { reducer as orderReducer } from './Order'
 import { reducer as assignTherapistReducer } from './AssignTherapist'
 import { reducer as orderTherapistReducer } from './OrderTherapist'
+import { reducer as scheduleReducer } from './Schedule'
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   dashboard: dashboardReducer,
   orderHistory: orderHistoryReducer,
   order: orderReducer,
+  schedule: scheduleReducer,
   assignTherapist: assignTherapistReducer,
 })
 
