@@ -6,21 +6,39 @@ import {
 } from 'constants/ActionTypes'
 
 function reviver(response) {
-  _.forEach(response, (value) => {
-    _.forEach(value, (val, key) => {
+  const newReponse = []
+
+  _.forEach(response, (object) => {
+    const newData = {}
+
+    _.forEach(object, (val, key) => {
+      if (key === 'id') {
+        const dataId = { id: val }
+        _.merge(newData, dataId)
+      }
+
+      if (key === 'title') {
+        const dataTitle = { title: val }
+        _.merge(newData, dataTitle)
+      }
+
       if (key === 'start') {
         const newDate = new Date(val)
-        _.update(value, 'start', newDate)
+        const dataStart = { start: newDate }
+        _.merge(newData, dataStart)
       }
 
       if (key === 'end') {
         const newDate = new Date(val)
-        _.update(value, 'end', newDate)
+        const dataEnd = { end: newDate }
+        _.merge(newData, dataEnd)
       }
     })
+
+    newReponse.push(newData)
   })
 
-  return response
+  return newReponse
 }
 
 export const fetchSchedules = () => async (dispatch) => {

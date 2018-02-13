@@ -9,6 +9,7 @@ const Schedule = ({ events }) => (
     <BigCalendar
       events={events}
       step={60}
+      defaultDate={new Date()}
       popup
     />
   </div>
