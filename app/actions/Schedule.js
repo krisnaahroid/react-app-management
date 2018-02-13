@@ -6,15 +6,14 @@ import {
 } from 'constants/ActionTypes'
 
 function reviver(response) {
-  var newReponse = []
+  const newReponse = []
 
   _.forEach(response, (object) => {
-    var newData = {}
+    const newData = {}
 
     _.forEach(object, (val, key) => {
-
       if (key === 'id') {
-        var dataId = { id: val }
+        const dataId = { id: val }
         _.merge(newData, dataId)
       }
 
@@ -38,7 +37,7 @@ function reviver(response) {
 
     newReponse.push(newData)
   })
-  
+
   return newReponse
 }
 
