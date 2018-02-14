@@ -5,6 +5,7 @@ import {
   FETCH_ORDER_REQUEST,
   FETCH_ORDER_THERAPIST_REQUEST,
   ASSIGN_THERAPIST,
+  MARK_COMPLETED,
 } from 'constants/ActionTypes'
 
 export const fetchOrderHistory = page => async (dispatch) => {
@@ -29,4 +30,10 @@ export const assignTherapist = (bookingCode, therapistId) => async (dispatch) =>
   const response = await httpPost(dispatch, 'orders/assign_therapist', { bookingCode, therapistId }, true)
 
   dispatch({ type: ASSIGN_THERAPIST, payload: { data: response.data } })
+}
+
+export const markCompleted = bookingCode => async (dispatch) => {
+  const response = await httpPost(dispatch, 'orders/mark_done', { bookingCode }, true)
+
+  dispatch({ type: MARK_COMPLETED, payload: { data: response.data } })
 }

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { compose, lifecycle, withHandlers, withState } from 'recompose'
 import { bindActionCreators } from 'redux'
-import { fetchOrder, fetchTherapists, assignTherapist } from 'actions/Order'
+import { fetchOrder, fetchTherapists, assignTherapist, markCompleted } from 'actions/Order'
 import OrderView from 'components/order/Order'
 
 export function mapStateToProps(state) {
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => ({
   fetchOrder: bindActionCreators(fetchOrder, dispatch),
   fetchTherapists: bindActionCreators(fetchTherapists, dispatch),
   assignTherapist: bindActionCreators(assignTherapist, dispatch),
+  markCompleted: bindActionCreators(markCompleted, dispatch),
 })
 
 export default compose(
@@ -35,6 +36,10 @@ export default compose(
     getMoreList: props => (event, index) => {
       props.fetchOrder(index + 1)
       props.setCurrentPage(index)
+    },
+    onComplete: props => (bookingCode) => {
+      props.markCompleted(bookingCode)
+      props.fetchOrder(props.currentPage)
     },
     toggle: props => (bookingCode) => {
       props.fetchTherapists(bookingCode)
