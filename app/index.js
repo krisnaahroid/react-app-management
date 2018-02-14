@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Router, Switch } from 'react-router-dom'
 import { CookieStorage } from 'cookie-storage'
 
-import { AUTH_USER } from 'constants/ActionTypes'
+import { AUTH_USER, AUTH_ROLES } from 'constants/ActionTypes'
 import { setCurrentUser } from 'actions/Auth'
 import ReactDOM from 'react-dom'
 import History from './history'
@@ -17,6 +17,7 @@ const token = cookieStorage.getItem('token')
 
 if (token) {
   store.dispatch({ type: AUTH_USER })
+  store.dispatch({ type: AUTH_ROLES, payload: token })
   store.dispatch(setCurrentUser())
 }
 

@@ -1,9 +1,25 @@
 import PropTypes from 'prop-types'
 import { Table, Avatar } from 'components/strap'
-import { startCase } from 'lodash'
+import { includes, startCase } from 'lodash'
 import StarRatingComponent from 'react-star-rating-component'
 
-const TherapistTableListView = ({ therapists }) => (
+const trIncome = (roles) => {
+  if (includes(roles, 'super_admin')) {
+    return (<th>Income</th>)
+  }
+
+  return null
+}
+
+const tdIncome = (roles, income) => {
+  if (includes(roles, 'super_admin')) {
+    return (<td>{income}</td>)
+  }
+
+  return null
+}
+
+const TherapistTableListView = ({ therapists, roles }) => (
   <div className="therapist-view-table">
     <Table className="kokoro-table">
       <thead>
@@ -11,7 +27,7 @@ const TherapistTableListView = ({ therapists }) => (
           <th className="text-left">Therapist</th>
           <th>Order</th>
           <th>Ratings</th>
-          <th>Income</th>
+          {trIncome(roles)}
           <th>Duration</th>
           <th>Gender</th>
         </tr>
@@ -28,7 +44,7 @@ const TherapistTableListView = ({ therapists }) => (
               <td>
                 <StarRatingComponent name="rate2" editing={false} starCount={5} value={item.attributes.rating} />
               </td>
-              <td>{item.attributes.income}</td>
+              {tdIncome(roles, item.attributes.income)}
               <td>{item.attributes.duration}</td>
               <td>{startCase(item.attributes.gender)}</td>
             </tr>
@@ -41,6 +57,7 @@ const TherapistTableListView = ({ therapists }) => (
 
 TherapistTableListView.propTypes = {
   therapists: PropTypes.array.isRequired,
+  roles: PropTypes.array,
 }
 
 export default TherapistTableListView
