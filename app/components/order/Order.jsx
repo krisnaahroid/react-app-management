@@ -13,8 +13,18 @@ const therapistAssign = (therapist, toggle, bookingCode) => {
   return <Button color="success" size="sm" onClick={() => toggle(bookingCode)}>Assign Therapist</Button>
 }
 
+const orderMarkDownButton = (status, onComplete, bookingCode) => {
+  if (status === 'ACTIVE') {
+    /* eslint-disable no-alert */
+    return <Button color="success" size="sm" onClick={() => { if (window.confirm('Are you sure you wish to mark completed this order?')) onComplete(bookingCode) }}>Mark As Done</Button>
+    /* eslint-enable no-alert */
+  }
+
+  return null
+}
+
 const OrderHistory = ({
-  orders, therapists, totalCount, currentPage, getMoreList, showModal, toggle, postAssignTherapist, bookingCode,
+  orders, therapists, totalCount, currentPage, getMoreList, showModal, toggle, postAssignTherapist, bookingCode, onComplete,
 }) => (
   <div>
     <OrderNav activeOrder="active" />
@@ -57,6 +67,9 @@ const OrderHistory = ({
                 <div className="text-bold-booking"><OrderStatus status={item.attributes.status} /></div>
                 {item.attributes.order_time_completed} <br />
                 {item.attributes.order_date_completed}
+                <div className="mark-completed">
+                  {orderMarkDownButton(item.attributes.status, onComplete, item.attributes.booking_code)}
+                </div>
               </td>
             </tr>
           ))
@@ -85,6 +98,7 @@ OrderHistory.propTypes = {
   showModal: PropTypes.bool,
   postAssignTherapist: PropTypes.func,
   getMoreList: PropTypes.func,
+  onComplete: PropTypes.func,
   bookingCode: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
