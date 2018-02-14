@@ -21,6 +21,7 @@ const rootReducer = combineReducers({
   order: orderReducer,
   schedule: scheduleReducer,
   assignTherapist: assignTherapistReducer,
+  roles: rolesReducer,
   feedback: feedbackReducer,
 })
 
