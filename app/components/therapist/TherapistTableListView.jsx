@@ -28,7 +28,7 @@ const TherapistTableListView = ({ therapists, roles }) => (
           <th>Order</th>
           <th>Ratings</th>
           {trIncome(roles)}
-          <th>Duration</th>
+          <th>Outlet</th>
           <th>Gender</th>
         </tr>
       </thead>
@@ -45,7 +45,7 @@ const TherapistTableListView = ({ therapists, roles }) => (
                 <StarRatingComponent name="rate2" editing={false} starCount={5} value={item.attributes.rating} />
               </td>
               {tdIncome(roles, item.attributes.income)}
-              <td>{item.attributes.duration}</td>
+              <td>{item.attributes.outlets}</td>
               <td>{startCase(item.attributes.gender)}</td>
             </tr>
           ))
