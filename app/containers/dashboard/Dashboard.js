@@ -13,6 +13,7 @@ export function mapStateToProps(state) {
     statIncome: state.dashboard.income,
     statPendingOrder: state.dashboard.pending_order,
     dataChart: state.dashboard.chart,
+    roles: state.roles.roles,
   }
 }
 
