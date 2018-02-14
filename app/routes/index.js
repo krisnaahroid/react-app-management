@@ -7,7 +7,9 @@ import Dashboard from 'containers/dashboard/Dashboard'
 import Order from 'containers/order/Order'
 import OrderHistory from 'containers/order/OrderHistory'
 import Schedule from 'containers/schedule/Schedule'
+import Feedback from 'containers/feedback/Feedback'
 import RequireAuth from 'components/auth/RequireAuth'
+
 
 const Routes = () => (
   <App>
@@ -15,6 +17,7 @@ const Routes = () => (
     <Route exact path="/order" component={RequireAuth(Order)} />
     <Route exact path="/order/history" component={RequireAuth(OrderHistory)} />
     <Route exact path="/schedule" component={RequireAuth(Schedule)} />
+    <Route exact path="/feedback" component={RequireAuth(Feedback)} />
     <Route exact path="/login" component={Login} />
   </App>
 )

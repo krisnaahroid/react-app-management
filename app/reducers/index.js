@@ -9,6 +9,7 @@ import { reducer as assignTherapistReducer } from './AssignTherapist'
 import { reducer as orderTherapistReducer } from './OrderTherapist'
 import { reducer as scheduleReducer } from './Schedule'
 import { reducer as rolesReducer } from './Roles'
+import { reducer as feedbackReducer } from './Feedback'
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -20,7 +21,7 @@ const rootReducer = combineReducers({
   order: orderReducer,
   schedule: scheduleReducer,
   assignTherapist: assignTherapistReducer,
-  roles: rolesReducer,
+  feedback: feedbackReducer,
 })
 
 export default rootReducer
