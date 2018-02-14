@@ -21,11 +21,8 @@ const rootReducer = combineReducers({
   order: orderReducer,
   schedule: scheduleReducer,
   assignTherapist: assignTherapistReducer,
-<<<<<<< bc7e3ec2b19ff40490bb6fc714c2a43021004f4d
   roles: rolesReducer,
-=======
   feedback: feedbackReducer,
->>>>>>> add customer feedback component
 })
 
 export default rootReducer
