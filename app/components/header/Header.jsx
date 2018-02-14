@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { NavLink as RRNavLink } from 'react-router-dom'
 
 import {
@@ -12,13 +13,13 @@ import {
 import UserNavigation from 'containers/header/UserNavigation'
 import Brand from './Brand'
 
-const Header = () => (
+const Header = ({ toggle, isOpen }) => (
   <div>
     <Navbar color="faded" light expand="md">
       <UserNavigation />
       <Brand />
-      <NavbarToggler />
-      <Collapse navbar>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
@@ -32,10 +33,19 @@ const Header = () => (
           <NavItem>
             <NavLink to="/feedback" activeClassName="active" tag={RRNavLink}>Customer Feedback</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink to="/therapist" activeClassName="active" tag={RRNavLink}>Data Therapist</NavLink>
+          </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
   </div>
 )
 
+Header.propTypes = {
+  toggle: PropTypes.func,
+  isOpen: PropTypes.bool,
+}
+
 export default Header
+
