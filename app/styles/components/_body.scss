@@ -46,3 +46,29 @@ body.kokoro {
 .modal-body {
   padding: 0;
 }
+
+.dv-star-rating-full-star {
+  #star-icon {
+    fill: #FF9500;
+  }
+}
+
+.dv-star-rating-empty-star {
+  #star-icon {
+    fill: #D8D8D8;
+  }
+}
+
+.user-navigation {
+  @media (max-width: $screen-xxs) {
+    display: none;
+  }
+
+  @media (max-width: $screen-xs) {
+    display: none;
+  }
+
+  @media (max-width: $screen-sm) {
+    display: none;
+  }
+}
