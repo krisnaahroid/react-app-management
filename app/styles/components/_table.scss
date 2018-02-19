@@ -150,6 +150,22 @@
     color: #FFF;
     font-size: 14px;
 
+    #therapist-data {
+      th {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          min-width: 200px;
+        }
+
+        &:nth-child(6) {
+          min-width: 180px;
+        }
+      }
+    }
+
     th {
       padding: 18px;
       text-align: center;
@@ -193,6 +209,25 @@
         &:last-child {
           border-right: 0;
           text-align: left;
+        }
+
+        &.action-button {
+          text-align: center;
+
+          button {
+            &:first-child {
+              margin-right: 8px
+            }
+
+            &:last-child{
+              margin-left: 8px
+            }
+          }
+        }
+
+        .avatar {
+          border-radius: 100%;
+          margin-bottom: 15px;
         }
       }
     }
