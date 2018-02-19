@@ -9,6 +9,7 @@ import OrderHistory from 'containers/order/OrderHistory'
 import Schedule from 'containers/schedule/Schedule'
 import Feedback from 'containers/feedback/Feedback'
 import RequireAuth from 'components/auth/RequireAuth'
+import DataTherapist from 'components/therapist/DataTherapist'
 
 
 const Routes = () => (
@@ -19,6 +20,7 @@ const Routes = () => (
     <Route exact path="/schedule" component={RequireAuth(Schedule)} />
     <Route exact path="/feedback" component={RequireAuth(Feedback)} />
     <Route exact path="/login" component={Login} />
+    <Route exact path="/therapist" component={RequireAuth(DataTherapist)} />
   </App>
 )
 
