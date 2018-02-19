@@ -11,6 +11,7 @@ import Feedback from 'containers/feedback/Feedback'
 import RequireAuth from 'components/auth/RequireAuth'
 import DataTherapist from 'components/therapist/DataTherapist'
 
+
 const Routes = () => (
   <App>
     <Route exact path="/" component={RequireAuth(Dashboard)} />

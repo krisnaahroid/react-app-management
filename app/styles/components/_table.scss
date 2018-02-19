@@ -246,6 +246,19 @@
     }
   }
 
+  .ratting-star {
+    position: relative;
+    width: 100%;
+    float: left;
+    display: block;
+
+    .dv-star-rating-non-editable {
+      display: block;
+      position: relative;
+      float: left;
+    }
+  }
+
   @media (max-width: $screen-xxs) {
     margin-top: 50px;
 
