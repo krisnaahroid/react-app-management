@@ -216,33 +216,33 @@
 
           button {
             &:first-child {
-              margin-right: 8px
+              margin-right: 8px;
             }
 
-            &:last-child{
-              margin-left: 8px
+            &:last-child {
+              margin-left: 8px;
             }
           }
-        }
-
-        .avatar {
-          border-radius: 100%;
-          margin-bottom: 15px;
         }
       }
     }
 
-    .ratting-star {
-      position: relative;
-      width: 100%;
-      float: left;
-      display: block;
+    .avatar {
+      border-radius: 100%;
+      margin-bottom: 15px;
+    }
+  }
 
-      .dv-star-rating-non-editable {
-        display: block;
-        position: relative;
-        float: left;
-      }
+  .ratting-star {
+    position: relative;
+    width: 100%;
+    float: left;
+    display: block;
+
+    .dv-star-rating-non-editable {
+      display: block;
+      position: relative;
+      float: left;
     }
   }
 
