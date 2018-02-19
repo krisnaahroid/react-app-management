@@ -72,3 +72,40 @@ body.kokoro {
     display: none;
   }
 }
+
+.detail-payment {
+  max-width: 400px;
+
+  .detail-payment--header {
+    background: #63AFCB;
+
+    h4 {
+      font-size: 16px;
+      color: #FFF;
+    }
+
+    button.close {
+      color: #FFF;
+    }
+  }
+
+  .detail-payment--body {
+    padding: 20px 0;
+    color: #9B9B9B;
+
+    div {
+      span {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.linkModal {
+  color: #6CB1D0 !important;
+  font-size: 13px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

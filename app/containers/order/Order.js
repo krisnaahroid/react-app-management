@@ -25,6 +25,7 @@ export default compose(
     mapDispatchToProps
   ),
   withState('showModal', 'setModal', false),
+  withState('showModal1', 'setModal1', false),
   withState('bookingCode', 'setBookingCode', ''),
   withState('currentPage', 'setCurrentPage', 0),
   lifecycle({
@@ -45,6 +46,11 @@ export default compose(
       props.fetchTherapists(bookingCode)
       props.setBookingCode(bookingCode)
       props.setModal(!props.showModal)
+    },
+    toggle1: props => (bookingCode) => {
+      props.fetchTherapists(bookingCode)
+      props.setBookingCode(bookingCode)
+      props.setModal1(!props.showModal1)
     },
     postAssignTherapist: props => (bookingCode, therapistId) => {
       props.assignTherapist(bookingCode, therapistId)
