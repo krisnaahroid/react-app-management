@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
-import { Table, Button, Pagination } from 'components/strap'
+import { NavLink, Table, Button, Pagination } from 'components/strap'
 import OrderStatus from 'components/order/OrderStatus'
 import OrderNav from 'components/order/OrderNav'
 import OrderTherapist from 'components/order/OrderTherapist'
 import AssignTherapistModal from 'components/order/AssignTherapistModal'
+import DetailPayment from 'components/order/DetailPayment'
 
 const therapistAssign = (therapist, toggle, bookingCode) => {
   if (therapist) {
@@ -12,6 +13,10 @@ const therapistAssign = (therapist, toggle, bookingCode) => {
 
   return <Button color="success" size="sm" onClick={() => toggle(bookingCode)}>Assign Therapist</Button>
 }
+
+const detailButton = (therapist, toggle1, bookingCode) => (
+  <NavLink className="linkModal" onClick={() => toggle1(bookingCode)}>Detail Payment</NavLink>
+)
 
 const orderMarkDownButton = (status, onComplete, bookingCode) => {
   if (status === 'ACTIVE') {
@@ -24,7 +29,7 @@ const orderMarkDownButton = (status, onComplete, bookingCode) => {
 }
 
 const OrderHistory = ({
-  orders, therapists, totalCount, currentPage, getMoreList, showModal, toggle, postAssignTherapist, bookingCode, onComplete,
+  orders, therapists, totalCount, currentPage, getMoreList, showModal, showModal1, toggle, postAssignTherapist, bookingCode, onComplete, toggle1,
 }) => (
   <div>
     <OrderNav activeOrder="active" />
@@ -53,7 +58,7 @@ const OrderHistory = ({
                 {item.attributes.therapist_preference} Therapist Preference<br />
                 Duration {item.attributes.service_duration} Minutes <br />
                 Total Price: {item.attributes.gross_amount} <br />
-                <a href="#">Detail Payment</a>
+                {detailButton(item.attributes.therapist, toggle1, item.attributes.booking_code)}
               </td>
               <td>
                 {item.attributes.order_time} <br />
@@ -86,6 +91,7 @@ const OrderHistory = ({
     />
 
     <AssignTherapistModal therapists={therapists} showModal={showModal} bookingCode={bookingCode} assignTherapist={postAssignTherapist} toggle={toggle} />
+    <DetailPayment therapists={therapists} showModal={showModal1} bookingCode={bookingCode} assignTherapist={postAssignTherapist} toggle={toggle1} />
   </div>
 )
 
@@ -94,8 +100,10 @@ OrderHistory.propTypes = {
   totalCount: PropTypes.number,
   currentPage: PropTypes.number,
   toggle: PropTypes.func,
+  toggle1: PropTypes.func,
   therapists: PropTypes.array,
   showModal: PropTypes.bool,
+  showModal1: PropTypes.bool,
   postAssignTherapist: PropTypes.func,
   getMoreList: PropTypes.func,
   onComplete: PropTypes.func,
