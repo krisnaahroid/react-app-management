@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types'
-import { Table, Pagination } from 'components/strap'
+import { Table, Pagination, NavLink } from 'components/strap'
 import OrderStatus from 'components/order/OrderStatus'
 import OrderNav from 'components/order/OrderNav'
 import OrderTherapist from 'components/order/OrderTherapist'
+import DetailPayment from 'components/order/DetailPayment'
+
+const detailButton = (therapist, toggle1, bookingCode) => (
+  <NavLink className="linkModal" onClick={() => toggle1(bookingCode)}>Detail Payment</NavLink>
+)
 
 const OrderHistory = ({
-  orders, totalCount, currentPage, getMoreList,
+  orders, totalCount, currentPage, getMoreList, therapists, showModal1, toggle1,
 }) => (
   <div>
     <OrderNav activeOrderHistory="active" />
@@ -34,7 +39,7 @@ const OrderHistory = ({
                 {item.attributes.therapist_preference} Therapist Preference<br />
                 Duration {item.attributes.service_duration} Minutes <br />
                 Total Price: {item.attributes.gross_amount} <br />
-                <a href="#">Detail Payment</a>
+                {detailButton(item.attributes.therapist, toggle1, item.attributes.booking_code)}
               </td>
               <td>
                 {item.attributes.order_time} <br />
@@ -61,14 +66,18 @@ const OrderHistory = ({
       onPageChange={getMoreList}
       currentPage={currentPage}
     />
+    <DetailPayment therapists={therapists} showModal={showModal1} toggle={toggle1} />
   </div>
 )
 
 OrderHistory.propTypes = {
   orders: PropTypes.array,
   totalCount: PropTypes.number,
+  therapists: PropTypes.array,
   currentPage: PropTypes.number,
   getMoreList: PropTypes.func,
+  toggle1: PropTypes.func,
+  showModal1: PropTypes.bool,
 }
 
 export default OrderHistory

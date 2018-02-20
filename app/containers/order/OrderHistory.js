@@ -21,6 +21,7 @@ export default compose(
     mapDispatchToProps
   ),
   withState('currentPage', 'setCurrentPage', 0),
+  withState('showModal1', 'setModal1', false),
   lifecycle({
     componentDidMount() {
       this.props.fetchOrderHistory(this.props.currentPage)
@@ -30,6 +31,9 @@ export default compose(
     getMoreList: props => (event, index) => {
       props.fetchOrderHistory(index + 1)
       props.setCurrentPage(index)
+    },
+    toggle1: props => () => {
+      props.setModal1(!props.showModal1)
     },
   }),
 )(OrderHistoryView)
