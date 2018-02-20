@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Table, Avatar, Button } from 'components/strap'
+import { Table, Avatar, Button, Pagination } from 'components/strap'
 import StarRatingComponent from 'react-star-rating-component'
 
 const EditButton = () => (
@@ -22,7 +22,9 @@ const DeleteButton = () => (
   </Button>
 )
 
-const DataTherapist = ({ therapists }) => (
+const DataTherapist = ({
+  therapists, totalCount, getMoreList, currentPage,
+}) => (
   <div className="kokoro-blue-table">
     <div className="heading-text">
       <h4>DATA THERAPIST
@@ -78,9 +80,19 @@ const DataTherapist = ({ therapists }) => (
         </tbody>
       </Table>
     </div>
+    <Pagination
+      className="justify-content-center"
+      dataSize={totalCount}
+      itemsPerPage={8}
+      onPageChange={getMoreList}
+      currentPage={currentPage}
+    />
   </div>
 )
 DataTherapist.propTypes = {
   therapists: PropTypes.array.isRequired,
+  getMoreList: PropTypes.func,
+  totalCount: PropTypes.number,
+  currentPage: PropTypes.number,
 }
 export default DataTherapist
