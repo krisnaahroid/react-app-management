@@ -9,7 +9,7 @@ import OrderHistory from 'containers/order/OrderHistory'
 import Schedule from 'containers/schedule/Schedule'
 import Feedback from 'containers/feedback/Feedback'
 import RequireAuth from 'components/auth/RequireAuth'
-import DataTherapist from 'components/therapist/DataTherapist'
+import DataTherapist from 'containers/therapist/therapist'
 
 
 const Routes = () => (
