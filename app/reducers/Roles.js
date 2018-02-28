@@ -1,8 +1,6 @@
 import jwtDecode from 'jwt-decode'
 
-import {
-  AUTH_ROLES,
-} from 'constants/ActionTypes'
+import { AUTH_ROLES } from 'constants/ActionTypes'
 
 const initialState = {
   roles: [],

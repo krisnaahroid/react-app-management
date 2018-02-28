@@ -1,6 +1,4 @@
-import {
-  FETCH_SCHEDULES,
-} from 'constants/ActionTypes'
+import { FETCH_SCHEDULES } from 'constants/ActionTypes'
 
 const initialState = {
   events: [],

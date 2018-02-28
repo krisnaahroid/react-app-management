@@ -1,9 +1,7 @@
 import { httpGet } from 'utils/API'
 import _ from 'lodash'
 
-import {
-  FETCH_SCHEDULES,
-} from 'constants/ActionTypes'
+import { FETCH_SCHEDULES } from 'constants/ActionTypes'
 
 function reviver(response) {
   const newReponse = []

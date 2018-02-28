@@ -1,6 +1,4 @@
-import {
-  MARK_COMPLETED,
-} from 'constants/ActionTypes'
+import { MARK_COMPLETED } from 'constants/ActionTypes'
 
 const initialState = {
   errorMessage: '',

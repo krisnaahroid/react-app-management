@@ -1,6 +1,4 @@
-import {
-  FETCH_ORDER_THERAPIST_REQUEST,
-} from 'constants/ActionTypes'
+import { FETCH_ORDER_THERAPIST_REQUEST } from 'constants/ActionTypes'
 
 const initialState = {
   items: [],

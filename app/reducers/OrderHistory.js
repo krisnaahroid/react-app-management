@@ -1,6 +1,4 @@
-import {
-  FETCH_ORDER_HISTORY_REQUEST,
-} from 'constants/ActionTypes'
+import { FETCH_ORDER_HISTORY_REQUEST } from 'constants/ActionTypes'
 
 const initialState = {
   orders: [],

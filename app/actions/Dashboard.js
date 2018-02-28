@@ -1,8 +1,6 @@
 import { httpGet } from 'utils/API'
 
-import {
-  FETCH_DASHBOARD_REQUEST,
-} from 'constants/ActionTypes'
+import { FETCH_DASHBOARD_REQUEST } from 'constants/ActionTypes'
 
 export const fetchStats = () => async (dispatch) => {
   const response = await httpGet(dispatch, 'stats', true)
