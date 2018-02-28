@@ -1,6 +1,4 @@
-import {
-  FETCH_DASHBOARD_REQUEST,
-} from 'constants/ActionTypes'
+import { FETCH_DASHBOARD_REQUEST } from 'constants/ActionTypes'
 
 const initialState = {
   order: 0,

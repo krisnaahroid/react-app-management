@@ -1,6 +1,4 @@
-import {
-  ASSIGN_THERAPIST,
-} from 'constants/ActionTypes'
+import { ASSIGN_THERAPIST } from 'constants/ActionTypes'
 
 const initialState = {
   errorMessage: '',
