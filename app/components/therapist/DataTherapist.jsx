@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types'
-import { Table, Avatar, Button, Pagination } from 'components/strap'
+import { Table, Avatar, Pagination } from 'components/strap'
 import StarRatingComponent from 'react-star-rating-component'
 
-const EditButton = () => (
-  <Button color="secondary">
-    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 45 38">
-      <g fill="none">
-        <path fill="#FFF" d="M33.532 12.785l-1.697 1.638-3.656-3.528 1.699-1.638a.757.757 0 0 1 1.044 0l2.61 2.52c.29.279.29.73 0 1.008zm-4.895 2.71l1.044-1.008 1.044 1.008-7.31 7.056-7.313 7.057-4.852 1.156 1.198-4.684 7.31-7.056 7.313-7.057 1.044 1.008-1.044 1.008-2.089 2.015-4.18 4.033-7.064 6.819 1.568 1.511 7.064-6.818 4.178-4.033 2.089-2.016z" />
-      </g>
-    </svg>
-  </Button>
-)
+// const EditButton = () => (
+//   <Button color="secondary">
+//     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 45 38">
+//       <g fill="none">
+//         <path fill="#FFF" d="M33.532 12.785l-1.697 1.638-3.656-3.528 1.699-1.638a.757.757 0 0 1 1.044 0l2.61 2.52c.29.279.29.73 0 1.008zm-4.895 2.71l1.044-1.008 1.044 1.008-7.31 7.056-7.313 7.057-4.852 1.156 1.198-4.684 7.31-7.056 7.313-7.057 1.044 1.008-1.044 1.008-2.089 2.015-4.18 4.033-7.064 6.819 1.568 1.511 7.064-6.818 4.178-4.033 2.089-2.016z" />
+//       </g>
+//     </svg>
+//   </Button>
+// )
 
-const DeleteButton = () => (
-  <Button color="secondary">
-    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 45 38">
-      <g fill="none">
-        <path fill="#FFF" d="M28.469 13.668H16.035v13.999c0 1.288.928 2.333 2.073 2.333h8.288c1.146 0 2.073-1.045 2.073-2.333v-14M24.842 9h-5.18l-1.036 1.168h-2.59c-.572 0-1.036.522-1.036 1.165v1.168h14.506v-1.168c0-.643-.464-1.165-1.037-1.165h-2.59L24.842 9" />
-      </g>
-    </svg>
-  </Button>
-)
+// const DeleteButton = () => (
+//   <Button color="secondary">
+//     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 45 38">
+//       <g fill="none">
+//         <path fill="#FFF" d="M28.469 13.668H16.035v13.999c0 1.288.928 2.333 2.073 2.333h8.288c1.146 0 2.073-1.045 2.073-2.333v-14M24.842 9h-5.18l-1.036 1.168h-2.59c-.572 0-1.036.522-1.036 1.165v1.168h14.506v-1.168c0-.643-.464-1.165-1.037-1.165h-2.59L24.842 9" />
+//       </g>
+//     </svg>
+//   </Button>
+// )
 
 const DataTherapist = ({
   therapists, totalCount, getMoreList, currentPage,
@@ -70,10 +70,11 @@ const DataTherapist = ({
                     </svg>)}
                 />
               </td>
-              <td className="action-button">
+              {/* <td className="action-button">
                 {EditButton()}
                 {DeleteButton()}
-              </td>
+              </td> */}
+              <td />
             </tr>
           ))
           }
