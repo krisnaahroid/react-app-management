@@ -30,9 +30,9 @@ const Header = ({ toggle, isOpen }) => (
           <NavItem>
             <NavLink to="/schedule" activeClassName="active" tag={RRNavLink}>Schedule</NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink to="/feedback" activeClassName="active" tag={RRNavLink}>Customer Feedback</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink to="/therapist" activeClassName="active" tag={RRNavLink}>Data Therapist</NavLink>
           </NavItem>
