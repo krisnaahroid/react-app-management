@@ -13,7 +13,8 @@ config.plugins.push(
     template: 'app/assets/index-prod.html.ejs',
     inject: false,
   }),
-  new webpack.optimize.OccurrenceOrderPlugin()
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.optimize.UglifyJsPlugin()
 )
 
 module.exports = config
