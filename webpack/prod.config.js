@@ -1,6 +1,7 @@
 var config            = require('./base.config')
 var webpack           = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var UglifyJSPlugin    = require('uglifyjs-webpack-plugin3')
 
 config.entry.app = [
   'babel-polyfill',
@@ -14,7 +15,9 @@ config.plugins.push(
     inject: false,
   }),
   new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin()
+  new UglifyJSPlugin({
+    sourceMap: true
+  }),
 )
 
 module.exports = config
