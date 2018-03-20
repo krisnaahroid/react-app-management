@@ -15,14 +15,7 @@ config.plugins.push(
     inject: false,
   }),
   new webpack.optimize.OccurrenceOrderPlugin(),
-  new UglifyJsPlugin({
-    sourceMap: true,
-    uglifyOptions: {
-      compress: {
-        warnings: false
-      }
-    }
-  })
+  new UglifyJsPlugin()
 )
 
 module.exports = config
