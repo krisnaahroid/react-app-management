@@ -3,7 +3,7 @@ jobs:
   bundle_dependencies:
     working_directory: ~/kokoro-admin-manager
     docker:
-      - image: circleci/node:6.11.1
+      - image: circleci/node:8.10.0
     steps:
       - checkout
       - restore_cache:
@@ -19,7 +19,7 @@ jobs:
   test:
     working_directory: ~/kokoro-admin-manager
     docker:
-      - image: circleci/node:6.11.1
+      - image: circleci/node:8.10.0
         environment:
           NODE_ENV: test
           MOCHA_FILE: /tmp/test-results/test-results.xml
