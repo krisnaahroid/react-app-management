@@ -15,12 +15,13 @@ config.plugins.push(
     inject: false,
   }),
   new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: true,
-    compress: {
-      warnings: false
+  new UglifyJSPlugin({
+    parallel: true,
+    uglifyOptions: {
+      ecma: 6,
+      compress: false // hangs without this
     }
-  }),
+  })
 )
 
 module.exports = config
