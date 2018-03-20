@@ -16,7 +16,6 @@ config.plugins.push(
   }),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new UglifyJSPlugin({
-    parallel: true,
     uglifyOptions: {
       ecma: 6,
       compress: false // hangs without this
