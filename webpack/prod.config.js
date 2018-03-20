@@ -8,18 +8,18 @@ config.entry.app = [
   'index.js',
 ]
 
-config.plugins.push(
-  new HtmlWebpackPlugin({
-    template: 'app/assets/index-prod.html.ejs',
-    inject: false,
-  }),
-  new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: true,
-    compress: {
-      warnings: false
-    }
-  })
-)
+// config.plugins.push(
+//   new HtmlWebpackPlugin({
+//     template: 'app/assets/index-prod.html.ejs',
+//     inject: false,
+//   }),
+//   new webpack.optimize.OccurrenceOrderPlugin(),
+//   new webpack.optimize.UglifyJsPlugin({
+//     sourceMap: true,
+//     compress: {
+//       warnings: false
+//     }
+//   })
+// )
 
 module.exports = config
