@@ -40,16 +40,15 @@ jobs:
       enabled: true
     steps:
       - checkout
-      - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
           fingerprints:
-            - "12:63:2d:c2:65:44:5d:aa:5f:d9:b7:57:bb:8b:b1:dd"
+            - "22:05:dd:aa:84:77:85:5e:a1:f0:b0:a9:1d:08:0f:a9"
       - deploy:
-          name: Deploy Master to Heroku
+          name: Deploy
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push heroku master
-              heroku restart
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              git remote add deploy dokku@kokoro-app.tk:admin-manager
+              git push deploy master
             fi
 
 workflows:
