@@ -9,12 +9,11 @@ config.entry.app = [
 ]
 
 config.plugins.push(
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: true,
-    compress: {
-      warnings: false
-    }
-  })
+  new HtmlWebpackPlugin({
+    template: 'app/assets/index-prod.html.ejs',
+    inject: false,
+  }),
+  new webpack.optimize.OccurrenceOrderPlugin()
 )
 
 module.exports = config
