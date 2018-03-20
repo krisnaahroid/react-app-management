@@ -3,6 +3,7 @@ var path = require('path')
 var packages = require('../package.json')
 
 var vendorLibraries = Object.keys(packages.dependencies)
+vendorLibraries.pop()
 vendorLibraries.push('connect-history-api-fallback')
 
 module.exports = {
