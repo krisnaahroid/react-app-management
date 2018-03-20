@@ -6,7 +6,7 @@
   "author": "Elga <elga.lesmana@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "yarn run build:dll",
+    "heroku-postbuild": "yarn run build:prod && yarn run build",
     "clean": "rm -rf public",
     "test": "NODE_ENV=test mocha-webpack",
     "test:watch": "NODE_ENV=test mocha-webpack --watch",
@@ -96,7 +96,7 @@
     "redux-form": "^7.1.2",
     "sweetalert": "^2.1.0",
     "redux-thunk": "^2.2.0",
-    "webpack": "^3.8.1"
+    "webpack": "3.8.1"
   },
   "engines": { 
     "node" : "8.10.0" 
