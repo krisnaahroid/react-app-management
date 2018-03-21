@@ -6,7 +6,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var appConfig = {
   site_env: process.env.SITE_ENV || 'development', // e.g. staging, edge
   api_url:  process.env.API_URL   || 'http://localhost:3000',
-  asset_url: (process.env.NODE_ENV === 'development' ? null : 'http://localhost:3000')
+  asset_url: (process.env.NODE_ENV === 'production' ? null : 'http://localhost:3000')
 }
 
 var postcssLoaderOptions = {
