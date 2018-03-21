@@ -15,7 +15,7 @@
     "stylelint": "stylelint app/styles/**/*.scss",
     "build": "webpack --config webpack/dev.config.js",
     "build:dll": "webpack --config webpack/dll.config.js",
-    "build:prod": "NODE_ENV=production webpack --config webpack/prod.config.js",
+    "build:prod": "NODE_ENV=production webpack --progress --config webpack/prod.config.js",
     "start": "yarn && yarn run build:dll && yarn run build && node server.js",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o public/storybook"
