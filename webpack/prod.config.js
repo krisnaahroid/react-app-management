@@ -18,7 +18,7 @@ config.plugins.push(
   new UglifyJSPlugin({
     uglifyOptions: {
       ecma: 6,
-      compress: false // hangs without this
+      compress: false
     }
   })
 )
