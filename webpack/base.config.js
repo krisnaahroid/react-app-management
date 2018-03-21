@@ -107,7 +107,7 @@ var config = {
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
   },
-  devtool: process.env.DEVTOOL || 'source-map'
+  devtool: process.env.DEVTOOL
 }
 
 if (process.env.NODE_ENV !== 'test') {
