@@ -46,7 +46,7 @@ jobs:
       - deploy:
           name: Deploy
           command: |
-            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git remote add deploy dokku@kokoro-app.tk:admin-manager
               git push deploy master
             fi
